@@ -4,125 +4,98 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>IDEO 個案分工</title>
+<title>Lean3 QFD 分工</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="R&D Management Topic 8：IDEO 個案的報告流程、投影片順序與三人分工">
+<meta name="description" content="R&D Management Exercise 8：Lean3 品質屋報告的流程、投影片順序與三人分工">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap">
 <style>
-/* Layout: 單欄長頁，從頭到尾照報告順序走；頂端色條同時是導覽。字體沿用可樂頁，底色沿用微軟 proposal 封面的淡紫漸層 */
+/* Layout: 單欄長頁，照報告順序走；品質屋圖用三人的顏色標出各自負責的區塊，頂端色條同時是導覽 */
 :root{
---g1:#DCD2F5;--g2:#F6F3FC;--g3:#FBFAFE;--g4:#DCE4F8;--nav:rgba(244,241,252,.74);--panel:rgba(255,255,255,.55);--solid:rgba(255,255,255,.62);
---ink:#1C1F4A;--muted:#4A4E6E;--faint:#6B6E8E;--line:#DAD6EE;--accent:#3E4BB5;--hot:#B4560F;--on:#FFFFFF;
+--g1:#DCD2F5;--g2:#F6F3FC;--nav:rgba(246,243,252,.76);--panel:rgba(255,255,255,.55);--solid:rgba(255,255,255,.62);
+--ink:#1C1F4A;--muted:#4A4E6E;--faint:#6B6E8E;--line:#DAD6EE;--accent:#3E4BB5;--hot:#B4560F;
 --qian:#A8478C;--qian-t:rgba(168,71,140,.09);--qian-b:rgba(168,71,140,.17);--yu:#14788A;--yu-t:rgba(20,120,138,.09);--yu-b:rgba(20,120,138,.17);--mel:#3E4BB5;--mel-t:rgba(62,75,181,.09);--mel-b:rgba(62,75,181,.16);
 --display:"Noto Serif TC",serif;--body:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g1:#352C5E;--g2:#1F1C3A;--g3:#15142A;--g4:#1F2A4E;--nav:rgba(30,27,56,.76);--panel:rgba(255,255,255,.055);--solid:rgba(255,255,255,.07);--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--on:#16152B;--qian:#E79BD0;--qian-t:rgba(231,155,208,.11);--qian-b:rgba(231,155,208,.2);--yu:#6FCEDD;--yu-t:rgba(111,206,221,.1);--yu-b:rgba(111,206,221,.19);--mel:#A9B2F5;--mel-t:rgba(169,178,245,.11);--mel-b:rgba(169,178,245,.2);color-scheme:dark}}
-:root[data-theme="dark"]{--g1:#352C5E;--g2:#1F1C3A;--g3:#15142A;--g4:#1F2A4E;--nav:rgba(30,27,56,.76);--panel:rgba(255,255,255,.055);--solid:rgba(255,255,255,.07);--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--on:#16152B;--qian:#E79BD0;--qian-t:rgba(231,155,208,.11);--qian-b:rgba(231,155,208,.2);--yu:#6FCEDD;--yu-t:rgba(111,206,221,.1);--yu-b:rgba(111,206,221,.19);--mel:#A9B2F5;--mel-t:rgba(169,178,245,.11);--mel-b:rgba(169,178,245,.2);color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g1:#352C5E;--g2:#1F1C3A;--nav:rgba(30,27,56,.76);--panel:rgba(255,255,255,.055);--solid:rgba(255,255,255,.07);--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--qian:#E79BD0;--qian-t:rgba(231,155,208,.11);--qian-b:rgba(231,155,208,.2);--yu:#6FCEDD;--yu-t:rgba(111,206,221,.1);--yu-b:rgba(111,206,221,.19);--mel:#A9B2F5;--mel-t:rgba(169,178,245,.11);--mel-b:rgba(169,178,245,.2);color-scheme:dark}}
+:root[data-theme="dark"]{--g1:#352C5E;--g2:#1F1C3A;--nav:rgba(30,27,56,.76);--panel:rgba(255,255,255,.055);--solid:rgba(255,255,255,.07);--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--qian:#E79BD0;--qian-t:rgba(231,155,208,.11);--qian-b:rgba(231,155,208,.2);--yu:#6FCEDD;--yu-t:rgba(111,206,221,.1);--yu-b:rgba(111,206,221,.19);--mel:#A9B2F5;--mel-t:rgba(169,178,245,.11);--mel-b:rgba(169,178,245,.2);color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--g2);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--nav)}
 .wrap{max-width:880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
-p{margin:0}ul,ol{margin:0;padding:0;list-style:none}strong{color:var(--accent)}a{color:inherit}
+p{margin:0}ul,ol{margin:0;padding:0;list-style:none}strong{color:var(--accent)}a{color:inherit}figure{margin:0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
 .hero .wrap{padding-block:52px 22px}
 .eyebrow{display:inline-block;font-size:13px;letter-spacing:.08em;color:var(--accent);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin-bottom:16px}
 h1{font-family:var(--display);font-size:clamp(26px,4.6vw,40px);line-height:1.3;margin:0 0 10px;text-wrap:balance}
 .meta{color:var(--muted);font-size:15px;max-width:38em}
-
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--nav);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-block:1px solid var(--line)}
-.flow{display:flex;gap:3px;padding-block:8px}
-.flow li{min-width:0}
-.flow a{display:block;padding:6px 8px;text-decoration:none;color:var(--ink);border-radius:6px;line-height:1.3}
+.flow{display:flex;gap:3px;padding-block:8px}.flow li{min-width:0}
+.flow a{display:block;height:100%;padding:6px 8px;text-decoration:none;color:var(--ink);border-radius:6px;line-height:1.3}
 .flow b{display:block;font-size:14px}.flow span{display:block;font-size:12px}
-.f-q a{background:var(--qian-b)}.f-y a{background:var(--yu-b)}.f-m a{background:var(--mel-b)}
+.f-q a{background:var(--qian-b)}.f-y a{background:var(--yu-b)}.f-m a{background:var(--mel-b)}.f-b{background:var(--line);border-radius:6px}
 .flow a:hover b{text-decoration:underline}
-
 h2{font-family:var(--display);font-size:clamp(20px,3vw,26px);line-height:1.4;margin:0 0 12px;text-wrap:balance}
-.lead{max-width:38em;margin-bottom:16px}
-.overview{padding-block:30px 8px}
-.tw{overflow-x:auto;margin-top:14px;border-radius:10px}
-.summary{padding-block:30px 0}.summary .lead{margin-bottom:10px}
+.lead{max-width:38em;margin-bottom:12px}
+.block{padding-top:30px}
 .core{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.55;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-top:14px}
 .core small{display:block;font-family:var(--body);font-weight:400;font-size:12.5px;color:var(--faint)}
-.tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin-top:14px}
-.tl li{background:var(--panel);padding:8px 10px;min-width:0;font-size:13.5px;line-height:1.5}
-.tl b{display:block;font-size:14px;color:var(--accent);font-variant-numeric:tabular-nums}
-.tl li.now{background:var(--mel-b)}
-.qs{margin-top:14px}.qs li{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:0 12px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6}
-.qs li:last-child{border-bottom:0}.qs .q{font-weight:700;color:var(--c)}.qs a{font-size:13.5px;color:var(--c);white-space:nowrap}
+.facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin-top:14px}
+.facts div{background:var(--panel);padding:8px 10px;min-width:0}
+.facts b{display:block;font-size:17px;line-height:1.35;font-variant-numeric:tabular-nums}.facts span{font-size:13px;color:var(--muted)}
+.house{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;overflow-x:auto}
+.house svg{display:block;width:100%;max-width:660px;min-width:480px;margin:0 auto;height:auto}
+.tw{overflow-x:auto;margin-top:14px;border-radius:10px}
 table{width:100%;min-width:560px;border-collapse:collapse;background:var(--panel);font-size:14.5px;line-height:1.55}
 th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
 thead th{font-size:13px;color:var(--muted);font-weight:500}
-tbody th{font-weight:700;white-space:nowrap}tr:last-child th,tr:last-child td{border-bottom:0}
-.tag{font-weight:700;color:var(--c)}
-td a{color:var(--c);font-weight:500}.nw{white-space:nowrap}
-.pp{font-variant-numeric:tabular-nums}
-
+tbody th{font-weight:700}tr:last-child th,tr:last-child td{border-bottom:0}
+.tag{font-weight:700;color:var(--c)}td a{color:var(--c);font-weight:500}.nw{white-space:nowrap}.pp{font-variant-numeric:tabular-nums}
+.cap{font-size:12.5px;color:var(--faint);margin-top:6px}
 .qian{--c:var(--qian);--t:var(--qian-t);--b:var(--qian-b)}.yu{--c:var(--yu);--t:var(--yu-t);--b:var(--yu-b)}.mel{--c:var(--mel);--t:var(--mel-t);--b:var(--mel-b)}
-
-.stage{padding-top:34px;scroll-margin-top:70px}
+.stage{padding-top:14px;scroll-margin-top:70px}.stage.first{padding-top:34px}
 .shead{background:var(--b);color:var(--ink);border-radius:10px 10px 0 0;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
-.shead h2{font-size:clamp(19px,2.8vw,23px);margin:0;color:inherit}
-.shead .by{font-size:14px;margin-left:auto;font-weight:500}
+.shead h2{font-size:clamp(19px,2.8vw,23px);margin:0;color:inherit}.shead .by{font-size:14px;margin-left:auto;font-weight:500}
 .sbody{background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;padding:14px 16px 16px}
-.ask{font-size:15px;color:var(--muted)}
-.keep{background:var(--t);padding:8px 14px;margin-top:10px;border-radius:6px}
-.keep small{display:block;font-size:12.5px;color:var(--muted)}
-.keep p{font-family:var(--display);font-weight:700;font-size:17.5px;line-height:1.55}
-
+.keep{background:var(--t);padding:8px 14px;border-radius:6px}
+.keep small{display:block;font-size:12.5px;color:var(--muted)}.keep p{font-family:var(--display);font-weight:700;font-size:17.5px;line-height:1.55}
 .slides{margin-top:14px;border-top:1px solid var(--line)}
 .slides li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 12px;padding:10px 0;border-bottom:1px solid var(--line)}
 .pno{font-weight:700;font-size:14px;color:var(--c);background:var(--t);border-radius:4px;text-align:center;height:28px;line-height:28px;font-variant-numeric:tabular-nums}
-.slides h3{font-size:16px;line-height:1.45;margin:0}
+.slides h3{font-size:16px;line-height:1.45;margin:0}.slides p{font-size:14.5px;line-height:1.6;color:var(--muted)}
 .min{float:right;margin-left:10px;font-size:13px;font-weight:500;color:var(--c);white-space:nowrap}
-.f-b{background:var(--line);border-radius:6px}
-.slides p{font-size:14.5px;line-height:1.6;color:var(--muted)}
-
 .label{font-size:13px;color:var(--faint);margin:16px 0 6px}
-.story{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.panel{background:var(--solid);border:1px solid var(--line);border-radius:8px;padding:10px 10px 12px;min-width:0}
-.panel svg{display:block;width:100%;height:auto}
-.panel h4{font-size:15px;margin:8px 0 2px;line-height:1.4}
-.panel p{font-size:13px;line-height:1.55;color:var(--muted)}
-.scroll{overflow-x:auto;background:var(--solid);border:1px solid var(--line);border-radius:8px;padding:12px}
-.scroll svg{display:block;width:100%;min-width:600px;height:auto}
-figure{margin:0}
-.cap{font-size:12.5px;color:var(--faint);margin-top:6px}
-.sbody table{background:var(--solid)}.sbody .tw{border:1px solid var(--line);border-radius:8px}
-
-.facets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
-.facet{background:var(--t);padding:9px 10px 10px;min-width:0}
-.facet b{display:block;font-size:15px}.facet span{display:block;font-size:13px;line-height:1.5}
-.scale{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.side{background:var(--solid);border:1px solid var(--line);border-radius:8px;padding:10px 14px}
-.side b{display:block;margin-bottom:2px}.side li{font-size:14.5px;line-height:1.6;margin:3px 0;padding-left:14px;position:relative}
-.side li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--c)}
-.reco{counter-reset:r;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.reco li{background:var(--t);border-radius:8px;padding:10px 12px;font-size:14.5px;line-height:1.6;counter-increment:r}
-.reco li::before{content:counter(r);display:block;font-weight:700;color:var(--c)}
-.tent{display:inline-block;font-size:12.5px;color:var(--faint);border:1px dashed var(--faint);border-radius:999px;padding:0 8px;margin-left:6px;vertical-align:1px;white-space:nowrap}
-
-.read{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13.5px;align-items:baseline}
-.read>span:first-child{color:var(--faint)}
-.read .pg{background:var(--t);border-radius:4px;padding:1px 8px;line-height:1.6}.read .pg b{color:var(--c)}
-
+.sbody table{background:var(--solid)}.sbody .tw{border:1px solid var(--line);border-radius:8px;margin-top:0}
+.pips{display:inline-flex;gap:2px;margin-right:4px;vertical-align:1px}.pips i{width:9px;height:9px;border-radius:2px;background:var(--line)}.pips i.on{background:var(--c)}
+.mts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mt{background:var(--solid);border:1px solid var(--line);border-radius:8px;padding:9px 12px;min-width:0}
+.mt-t{font-weight:700;font-size:15px;margin-bottom:4px}.mt-t span{display:block;font-weight:400;font-size:12.5px;color:var(--faint)}
+.mr{display:grid;grid-template-columns:44px minmax(0,1fr) 70px;gap:6px;align-items:center;font-size:12.5px;line-height:1.7}
+.mr .vl{text-align:right;font-variant-numeric:tabular-nums}.mr.me{font-weight:700}
+.tr{display:block;height:10px;min-width:0}.fill{display:block;height:100%;background:var(--faint);opacity:.32;border-radius:0 4px 4px 0}
+.mr.me .fill,.fill.top{background:var(--accent);opacity:.55}
+.roof{background:var(--solid);border:1px solid var(--line);border-radius:8px;padding:10px;overflow-x:auto}
+.roof svg{display:block;width:100%;max-width:520px;min-width:420px;margin:0 auto;height:auto}
+.key{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--muted);margin-top:6px}
+.sbody table.hm{min-width:560px;font-size:13.5px}.hm th,.hm td{padding:6px 6px;text-align:center}.hm tbody th{text-align:left;font-weight:500;white-space:nowrap}
+.hm .wt{font-weight:700;color:var(--c)}.hm .h9{background:var(--mel-b);font-weight:700}.hm .h3{background:var(--mel-t)}.hm .h0{color:var(--faint)}
+.hm .sum th,.hm .sum td{font-weight:700;font-variant-numeric:tabular-nums}
+.rank li{display:grid;grid-template-columns:18px 92px minmax(0,1fr) 112px;gap:8px;align-items:center;padding:3px 0;font-size:14px}.rank .vl{white-space:nowrap}
+.rank .tr{height:14px}.rank .rk{color:var(--faint);font-size:13px}.rank .vl{text-align:right;font-variant-numeric:tabular-nums}
+.formula{font-size:14.5px;background:var(--solid);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:10px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.todo{font-size:14px;color:var(--muted);margin-top:12px}.todo li{padding-left:18px;position:relative;margin:3px 0}
+.todo li::before{content:"";position:absolute;left:1px;top:7px;width:10px;height:10px;border:1.5px solid var(--c);border-radius:2px}
 .pass{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 10px;align-items:center;margin:14px 0 0 12px;font-size:14.5px;color:var(--muted)}
-.pass svg{display:block;width:18px;height:36px}
-.pass b{color:var(--ink)}
-
+.pass svg{display:block;width:18px;height:36px}.pass b{color:var(--ink)}
+.en{font-size:14.5px;font-style:italic;color:var(--muted);margin-top:10px}
 .final{padding-block:40px 0}
-.check li{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
-.check li:last-child{border-bottom:0}
-.check li::before{content:"";flex:none;width:12px;height:12px;border:1.5px solid var(--accent);border-radius:3px;transform:translateY(1px)}
-footer{margin-top:36px;padding-block:16px 44px;border-top:1px solid var(--line);font-size:13px;color:var(--faint)}
-
+.check li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:10px;align-items:baseline}
+.check li:last-child{border-bottom:0}.check li::before{content:"";flex:none;width:12px;height:12px;border:1.5px solid var(--accent);border-radius:3px;transform:translateY(1px)}
+footer{margin-top:36px;padding-block:16px 44px;border-top:1px solid var(--line);font-size:13px;color:var(--faint)}footer a{color:var(--accent)}
 @media (max-width:680px){
-body{font-size:15px}.hero .wrap{padding-block:38px 18px}
-.flow a{padding:6px 3px;text-align:center}.flow span{display:none}.flow b{font-size:13px}
-.tl{grid-template-columns:minmax(0,1fr)}.tl li{display:grid;grid-template-columns:68px minmax(0,1fr);gap:8px}.qs li{grid-template-columns:36px minmax(0,1fr);gap:0 8px}.qs a{grid-column:2}
-.story{grid-template-columns:repeat(2,minmax(0,1fr))}.facets{grid-template-columns:repeat(2,minmax(0,1fr))}.scale,.reco{grid-template-columns:minmax(0,1fr)}
-.sbody{padding-inline:12px}.sbody table{min-width:0}.sbody th,.sbody td{padding:8px}.sbody tbody th{white-space:normal}
+body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.flow a{padding:5px 2px;text-align:center}.flow span{display:none}.flow b{font-size:12.5px}
+.mts{grid-template-columns:minmax(0,1fr)}.sbody{padding-inline:12px}.sbody table{min-width:0}.sbody th,.sbody td{padding:8px}
+.rank li{grid-template-columns:14px 74px minmax(0,1fr) 86px;gap:6px;font-size:13px}.facts div:last-child{grid-column:1/-1}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -131,240 +104,174 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}
 
 
 <header class="hero"><div class="wrap">
-<span class="eyebrow">清大科管所｜R&amp;D Management Topic 8｜11/20</span>
-<h1>IDEO 個案分工</h1>
-<p class="meta">從開場到結論照順序走一次。下面的色條是報告順序，長度代表時間，點一下可以跳到那一段，往下滑時也會一直留在畫面上。</p>
+<span class="eyebrow">清大科管所｜R&amp;D Management Exercise 8｜11/20 上台</span>
+<h1>Lean3 QFD 分工</h1>
+<p class="meta">20 分鐘的報告，從開場到結論照順序走一次。下面的色條是報告順序，長度代表時間，點一下可以跳到那一段，往下滑時也會留在畫面上。</p>
 </div></header>
 
-<nav class="bar" aria-label="報告順序與工作量"><div class="wrap"><ol class="flow">
-<li class="f-q" style="flex:3 1 0"><a href="#s1"><b>開場</b><span>芊 3 分</span></a></li>
-<li class="f-y" style="flex:6 1 0"><a href="#s2"><b>Q5</b><span>筱于 6 分</span></a></li>
-<li class="f-q" style="flex:3 1 0"><a href="#s3"><b>Q6</b><span>芊 3 分</span></a></li>
-<li class="f-m" style="flex:4 1 0"><a href="#s4"><b>Q7</b><span>美樂蒂 4 分</span></a></li>
-<li class="f-m" style="flex:3 1 0"><a href="#s5"><b>結論</b><span>美樂蒂 3 分</span></a></li>
+<nav class="bar" aria-label="報告順序與時間"><div class="wrap"><ol class="flow">
+<li class="f-q" style="flex:3 1 0"><a href="#s1"><b>品質屋</b><span>羽芊 3 分</span></a></li>
+<li class="f-q" style="flex:3 1 0"><a href="#s2"><b>需求技術</b><span>羽芊 3 分</span></a></li>
+<li class="f-y" style="flex:6 1 0"><a href="#s3"><b>競品＋屋頂</b><span>小魚 6 分</span></a></li>
+<li class="f-m" style="flex:4.5 1 0"><a href="#s4"><b>矩陣計分</b><span>宛云 4.5 分</span></a></li>
+<li class="f-m" style="flex:2.5 1 0"><a href="#s5"><b>規格</b><span>宛云 2.5 分</span></a></li>
 <li class="f-b" style="flex:1 1 0" aria-label="緩衝 1 分鐘"></li>
 </ol></div></nav>
 
-<div class="wrap">
-<main>
+<div class="wrap"><main>
 
-<section class="summary">
-<h2>個案在講什麼</h2>
-<p class="lead">IDEO 是 1990 年代得獎最多的產品設計公司，強項是用大量原型和腦力激盪做創新。專案負責人 Dennis Boyle 剛幫 Palm 做完精緻的 Palm V，Palm Pilot 的推手 Hawkins 和 Dubinsky 就離開 3Com、成立 Handspring，回頭請他設計新機 Visor。</p>
-<p class="lead">Handspring 要 Visor 便宜、能插擴充模組，還要趕上 1999 年底的節慶檔期，開發時間不到 Palm V 的一半。Boyle 最擔心的是，這樣會犧牲 IDEO 最有名的前期探索。</p>
-<ol class="tl" aria-label="個案時間脈絡">
-<li><b>1991</b><span>IDEO 由三家公司合併成立</span></li>
-<li><b>1996/3</b><span>Palm Pilot 上市，大受歡迎</span></li>
-<li><b>1996 底</b><span>IDEO 開始做 Palm V</span></li>
-<li class="now"><b>1998 夏</b><span>Handspring 成立並找上 IDEO，Boyle 要做決定</span></li>
-<li><b>1999 底</b><span>Handspring 希望 Visor 上市</span></li>
-</ol>
-<p class="core"><small>核心問題</small>客戶要的速度，和公司最強的做法衝突時，IDEO 該怎麼選？</p>
-<p class="label">老師要我們回答的三題</p>
-<ol class="qs">
-<li class="yu"><span class="q">Q5</span><span>IDEO 的流程、組織、文化和管理有什麼特色？</span><a href="#s2">筱于，第 2 段</a></li>
-<li class="qian"><span class="q">Q6</span><span>IDEO 該接受不到 Palm V 一半的時程嗎？</span><a href="#s3">芊，第 3 段</a></li>
-<li class="mel"><span class="q">Q7</span><span>該說服 Handspring 多給時間，還是直接婉拒？要從雙方角度考慮</span><a href="#s4">美樂蒂，第 4 段</a></li>
-</ol>
-</section>
-
-<section class="overview">
-<h2>每個人的 part</h2>
-<p class="lead">全程 20 分鐘，分成 5 段、建議 12 頁。芊分成兩段，中間由筱于講 Q5，順序就跟老師的題目一樣。</p>
-<div class="tw"><table>
-<thead><tr><th>組員</th><th>比重</th><th>報告時間</th><th>負責哪幾段</th><th>投影片</th><th>這部分要讓台下記住</th></tr></thead>
-<tbody>
-<tr class="qian"><th><span class="tag">芊</span></th><td class="pp">約 30%</td><td class="pp nw">6 分鐘<br>（3＋3）</td><td class="nw"><a href="#s1">第 1 段 開場</a><br><a href="#s3">第 3 段 Q6</a></td><td class="pp nw">P1–P3<br>P7–P8</td><td>案子很吸引人，但接了要付出代價</td></tr>
-<tr class="yu"><th><span class="tag">筱于</span></th><td class="pp">約 30%</td><td class="pp nw">6 分鐘</td><td class="nw"><a href="#s2">第 2 段 Q5</a></td><td class="pp nw">P4–P6</td><td>IDEO 的強項來自一整套做法，而且需要時間</td></tr>
-<tr class="mel"><th><span class="tag">美樂蒂</span></th><td class="pp">約 40%</td><td class="pp nw">7 分鐘<br>（4＋3）</td><td class="nw"><a href="#s4">第 4 段 Q7</a><br><a href="#s5">第 5 段 結論</a></td><td class="pp nw">P9–P10<br>P11–P12</td><td>我們的建議是什麼，為什麼雙方都說得通</td></tr>
-</tbody></table></div>
-<p class="cap">比重是工作量的估計，美樂蒂還要收斂結論。三人共 19 分鐘，最後 1 分鐘是緩衝。</p>
-</section>
-
-<section class="stage qian" id="s1">
-<div class="shead"><h2>第 1 段｜開場：發生了什麼事？</h2><span class="by">芊｜P1–P3｜0:00–3:00</span></div>
-<div class="sbody">
-<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>Boyle 手上有一個好案子，但時間不到上次的一半</p></div>
-<ol class="slides">
-<li><span class="pno">P1</span><div><h3><span class="min">30 秒</span>封面＋報告順序</h3><p>題目、組員，再用一句話說明今天會回答三個問題</p></div></li>
-<li><span class="pno">P2</span><div><h3><span class="min">1 分鐘</span>個案故事</h3><p>用下面四格講完：IDEO 是誰、Palm V、Handspring、Boyle 的兩難</p></div></li>
-<li><span class="pno">P3</span><div><h3><span class="min">1 分 30 秒</span>Palm V 和 Visor 差多少</h3><p>放時間比較圖和對照表，最後帶出接受、說服延後、婉拒三條路</p></div></li>
-</ol>
-<p class="label">P2 可以用的四格</p>
-<div class="story">
-<article class="panel">
-<svg viewBox="0 0 220 104" role="img" aria-label="1995 到 1998 年設計獎項：IDEO 32 座，ZIBA 20 座，Fitch 18 座">
-<g font-size="12" fill="var(--ink)"><text x="0" y="28">IDEO</text><text x="0" y="58">ZIBA</text><text x="0" y="88">Fitch</text></g>
-<rect x="42" y="16" width="144" height="16" fill="var(--accent)" fill-opacity=".5"/><rect x="42" y="46" width="90" height="16" fill="var(--faint)" fill-opacity=".3"/><rect x="42" y="76" width="81" height="16" fill="var(--faint)" fill-opacity=".3"/>
-<g font-size="13" font-weight="700" fill="var(--ink)"><text x="192" y="29">32</text><text x="138" y="59">20</text><text x="129" y="89">18</text></g>
-</svg>
-<h4>設計圈第一名</h4><p>IDEO 靠快速做原型和腦力激盪起家，1995–98 年得獎最多</p>
-</article>
-<article class="panel">
-<svg viewBox="0 0 220 104" role="img" aria-label="一排原型從粗糙泡棉逐漸變成精緻成品">
-<g stroke="var(--faint)" stroke-width="1.3">
-<rect x="4" y="30" width="26" height="40" rx="3" fill="var(--qian-t)"/><rect x="40" y="30" width="26" height="40" rx="3" fill="var(--qian-t)"/>
-<rect x="76" y="30" width="26" height="40" rx="3" fill="var(--g1)"/><rect x="112" y="30" width="26" height="40" rx="3" fill="var(--g1)"/>
-<rect x="148" y="30" width="26" height="40" rx="3" fill="var(--solid)"/><rect x="184" y="30" width="26" height="40" rx="5" fill="var(--solid)"/></g>
-<rect x="152" y="35" width="18" height="20" fill="var(--accent)" fill-opacity=".35"/><rect x="188" y="35" width="18" height="20" fill="var(--accent)" fill-opacity=".35"/>
-<text x="4" y="90" font-size="12" fill="var(--muted)">泡棉</text><text x="210" y="90" font-size="12" fill="var(--muted)" text-anchor="end">接近量產</text>
-</svg>
-<h4>Palm V 慢工細活</h4><p>做了 20–25 個原型，做出 11mm 厚的鋁殼機</p>
-</article>
-<article class="panel">
-<svg viewBox="0 0 220 104" role="img" aria-label="手持裝置背面有插槽，模組像遊戲卡帶一樣插入">
-<rect x="46" y="10" width="62" height="86" rx="6" fill="var(--solid)" stroke="var(--ink)" stroke-width="1.6"/>
-<rect x="56" y="48" width="42" height="36" rx="2" fill="none" stroke="var(--ink)" stroke-dasharray="4 3"/>
-<rect x="156" y="48" width="42" height="36" rx="3" fill="var(--accent)" fill-opacity=".4"/>
-<path d="M150 66H106M114 59l-9 7 9 7" fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="177" y="38" font-size="12" fill="var(--muted)" text-anchor="middle">擴充模組</text>
-</svg>
-<h4>老客戶開新公司</h4><p>Handspring 想做便宜又能插模組的 Visor，靈感來自 Game Boy 卡帶</p>
-</article>
-<article class="panel">
-<svg viewBox="0 0 220 104" role="img" aria-label="從 Boyle 分出三條路：接受、說服延後、婉拒">
-<circle cx="24" cy="52" r="11" fill="var(--accent)" fill-opacity=".45"/>
-<g fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round"><path d="M35 52C70 52 70 18 106 18"/><path d="M35 52H106"/><path d="M35 52C70 52 70 86 106 86"/></g>
-<g font-size="13.5" fill="var(--ink)" font-weight="700"><text x="114" y="23">接受</text><text x="114" y="57">說服延後</text><text x="114" y="91">婉拒</text></g>
-</svg>
-<h4>Boyle 的兩難</h4><p>接了，IDEO 最強的前期探索會被壓縮。他該怎麼選？</p>
-</article>
+<section class="block">
+<h2>這份報告在做什麼</h2>
+<p class="lead">Lean3 是為都市短程移動設計的三輪電動駕艙機車，有機車的靈活，也有封閉車艙和冷氣。它的核心技術是 Active Lean Technology，轉彎時由系統協助車身傾斜，讓窄車體也能保持穩定。</p>
+<p class="lead">我們用 QFD 的品質屋，把「顧客想要什麼」一步步翻譯成「研發該先做什麼」。依目前的評分，車體安全排第一，主動傾斜控制排第二。</p>
+<div class="facts">
+<div><b>970 mm</b><span>車寬</span></div><div><b>80 km/h</b><span>最高時速</span></div><div><b>100 km</b><span>WLTC 續航</span></div><div><b>8.1 kWh</b><span>磷酸鐵鋰電池</span></div><div><b>NT$328,000</b><span>個人預購價</span></div>
 </div>
-<p class="label">P3 可以用的比較圖</p>
-<figure>
-<div class="scroll">
-<svg viewBox="0 0 720 180" role="img" aria-label="開發時間比較：Palm V 約 22 個月，Visor 約 10 個月，不到一半">
-<text x="16" y="16" font-size="13" font-weight="700" fill="var(--accent)">前期探索：IDEO 的招牌</text>
-<path d="M16 22V28H151V22" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
-<rect x="16" y="32" width="81" height="34" fill="var(--accent)" fill-opacity=".36"/>
-<rect x="98" y="32" width="53" height="34" fill="var(--accent)" fill-opacity=".25"/>
-<rect x="152" y="32" width="134" height="34" fill="var(--faint)" fill-opacity=".4"/>
-<rect x="287" y="32" width="323" height="34" fill="var(--faint)" fill-opacity=".25"/>
-<g font-size="12.5" text-anchor="middle">
-<text x="56" y="54" fill="var(--ink)" font-weight="700">Phase 0</text>
-<text x="124" y="54" fill="var(--ink)" font-weight="700">Phase I</text>
-<text x="219" y="54" fill="var(--ink)">Phase II</text>
-<text x="448" y="54" fill="var(--ink)">Phase III–IV</text>
+<p class="core"><small>核心問題</small>Lean3 應該把有限的研發資源，優先投入哪些技術，才能最有效滿足顧客需求？</p>
+</section>
+
+<section class="block">
+<h2>每個人負責品質屋的哪一塊</h2>
+<p class="lead">一個人一個顏色，圖中數字是老師的要求編號。</p>
+<figure class="house">
+<svg viewBox="0 0 660 420" role="img" aria-label="品質屋分工：羽芊負責顧客需求與技術需求，小魚負責屋頂和競品比較，宛云負責關係矩陣與分數，地基的設計規格也由宛云負責">
+<g stroke="var(--line)" stroke-width="2">
+<path d="M190 112L320 14L450 112Z" fill="var(--yu-b)"/>
+<rect x="190" y="112" width="260" height="58" fill="var(--qian-b)"/>
+<rect x="30" y="170" width="160" height="130" fill="var(--qian-b)"/>
+<rect x="190" y="170" width="260" height="130" fill="var(--mel-b)"/>
+<rect x="450" y="170" width="180" height="130" fill="var(--yu-b)"/>
+<rect x="190" y="300" width="260" height="56" fill="var(--mel-b)"/>
+<rect x="30" y="356" width="600" height="50" fill="var(--mel-t)"/>
 </g>
-<text x="618" y="46" font-size="14" font-weight="700" fill="var(--ink)">Palm V</text>
-<text x="618" y="63" font-size="13" fill="var(--muted)">約 22 個月</text>
-<rect x="16" y="84" width="270" height="34" fill="var(--hot)" fill-opacity=".24"/>
-<text x="151" y="106" font-size="12.5" text-anchor="middle" fill="var(--ink)" font-weight="700">前期探索要大幅壓縮</text>
-<text x="294" y="98" font-size="14" font-weight="700" fill="var(--ink)">Visor</text>
-<text x="294" y="115" font-size="13" fill="var(--muted)">約 10 個月</text>
-<line x1="16" x2="610" y1="136" y2="136" stroke="var(--faint)" stroke-width="1"/>
-<g stroke="var(--faint)" stroke-width="1"><line x1="16" x2="16" y1="136" y2="142"/><line x1="178" x2="178" y1="136" y2="142"/><line x1="340" x2="340" y1="136" y2="142"/><line x1="502" x2="502" y1="136" y2="142"/></g>
-<g font-size="12.5" fill="var(--muted)" text-anchor="middle"><text x="24" y="158">開工</text><text x="178" y="158">6 個月</text><text x="340" y="158">12 個月</text><text x="502" y="158">18 個月</text></g>
+<g font-size="15" font-weight="700" fill="var(--ink)" text-anchor="middle">
+<text x="320" y="72">5 屋頂</text><text x="320" y="138">3 技術需求 HOWs</text><text x="110" y="228">2 顧客需求</text><text x="320" y="228">1 需求×技術 關係矩陣</text><text x="540" y="228">4 競品比較</text><text x="320" y="326">6、7 Absolute、Relative</text><text x="330" y="378">8 主要設計規格</text>
+</g>
+<g font-size="13" text-anchor="middle" fill="var(--muted)">
+<text x="320" y="92">技術會互相幫忙還是衝突</text><text x="320" y="157">工程師能測量的指標</text><text x="110" y="250">WHATs 與重要性</text><text x="320" y="250">每項技術滿足需求的程度</text><text x="540" y="250">Lean3 vs. 對手</text><text x="320" y="346">哪項技術最優先</text><text x="330" y="397">把分數變成設計方向</text>
+</g>
+<g font-size="13" font-weight="700">
+<text x="30" y="150" fill="var(--qian)">■ 羽芊</text><text x="30" y="84" fill="var(--yu)">■ 小魚</text><text x="30" y="117" fill="var(--mel)">■ 宛云</text>
+</g>
 </svg>
-</div>
-<figcaption class="cap">兩條都從開工算到交給生產，比的是長度。Palm V 依個案日期推算（1996 年底到 1998 年秋），Visor 用個案寫的約 10 個月。</figcaption>
 </figure>
 <div class="tw"><table>
-<thead><tr><th>比一比</th><th>Palm V</th><th>Visor</th></tr></thead>
+<thead><tr><th>組員</th><th>比重</th><th>時間</th><th>老師的要求</th><th>投影片</th><th>這部分要讓台下記住</th></tr></thead>
 <tbody>
-<tr><th>定位</th><td>高價、精品感</td><td>便宜，讓新標準快速普及</td></tr>
-<tr><th>價格</th><td>450 美元</td><td>150 美元</td></tr>
-<tr><th>外殼、電池</th><td>陽極氧化鋁、鋰電池</td><td>塑膠、AAA 電池</td></tr>
-<tr><th>使用者研究</th><td>自己買機器發給大家用，再收回饋</td><td>Handspring 認為幾乎不需要</td></tr>
+<tr class="qian"><th><span class="tag">羽芊</span></th><td class="pp">約 30%</td><td class="pp nw">6 分鐘</td><td><a href="#s1">1 五大部分</a><br><a href="#s2">2 需求、3 技術</a></td><td class="pp nw">P1–P4</td><td>QFD 把顧客的話翻譯成工程目標</td></tr>
+<tr class="yu"><th><span class="tag">小魚</span></th><td class="pp">約 30%</td><td class="pp nw">6 分鐘</td><td><a href="#s3">4 競品、5 屋頂</a></td><td class="pp nw">P5–P7</td><td>Lean3 贏在窄和主動傾斜，但改善都有代價</td></tr>
+<tr class="mel"><th><span class="tag">宛云<br>主講</span></th><td class="pp">約 40%</td><td class="pp nw">7 分鐘</td><td><a href="#s4">6、7 計分</a><br><a href="#s5">8 設計規格</a></td><td class="pp nw">P8–P11</td><td>研發該先做什麼，以及為什麼</td></tr>
 </tbody></table></div>
-<p class="read"><span>要讀</span><span class="pg"><b>p.1</b> 開頭故事</span><span class="pg"><b>p.8–9</b> Palm 背景，快速掃過</span><span class="pg"><b>p.11–13</b> Handspring，重點</span><span class="pg"><b>p.14</b> Exhibit 1 時間軸</span></p>
+<p class="cap">比重是工作量的估計，主講的宛云要多負責計算和結論。三人共 19 分鐘，另留 1 分鐘緩衝。</p>
+</section>
+
+<section class="stage first qian" id="s1">
+<div class="shead"><h2>第 1 段｜開場與品質屋（要求 1）</h2><span class="by">羽芊｜P1–P2｜0:00–3:00</span></div>
+<div class="sbody">
+<div class="keep"><small>這段結束時，台下要知道</small><p>QFD 就是把「顧客想要什麼」翻譯成「工程師該先做什麼」</p></div>
+<ol class="slides">
+<li><span class="pno">P1</span><div><h3><span class="min">1 分鐘</span>Lean3 是什麼、為什麼用 QFD</h3><p>產品介紹加核心問題，上面的五個規格可以直接用</p></div></li>
+<li><span class="pno">P2</span><div><h3><span class="min">2 分鐘</span>品質屋五大部分</h3><p>放品質屋圖，每一塊用一句話說明，也順便預告接下來的順序</p></div></li>
+</ol>
 </div>
 </section>
 
-<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>芊交棒給筱于：</b>在回答要不要接之前，先看 IDEO 到底強在哪裡。</p></div>
-
-<section class="stage yu" id="s2" style="padding-top:14px">
-<div class="shead"><h2>第 2 段｜Q5：IDEO 是什麼樣的公司？</h2><span class="by">筱于｜P4–P6｜3:00–9:00</span></div>
+<section class="stage qian" id="s2">
+<div class="shead"><h2>第 2 段｜需求與技術（要求 2、3）</h2><span class="by">羽芊｜P3–P4｜3:00–6:00</span></div>
 <div class="sbody">
-<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>IDEO 的強項來自一整套做法，而這套做法需要時間</p></div>
+<div class="keep"><small>這段結束時，台下要知道</small><p>7 項顧客需求，對應到 7 項可以測量的技術</p></div>
 <ol class="slides">
-<li><span class="pno">P4</span><div><h3><span class="min">2 分 30 秒</span>四個面向總覽</h3><p>一張關係圖，畫出流程、組織、文化、管理怎麼互相支撐</p></div></li>
-<li><span class="pno">P5</span><div><h3><span class="min">2 分鐘</span>用 Palm V 走一次</h3><p>時間軸標出各 Phase，放上原型照片，示範這套做法實際怎麼運作</p></div></li>
-<li><span class="pno">P6</span><div><h3><span class="min">1 分 30 秒</span>這套做法成立的條件</h3><p>前期探索和試錯都要時間，最後一句帶到 Visor</p></div></li>
+<li><span class="pno">P3</span><div><h3><span class="min">1 分 30 秒</span>Customer Requirements</h3><p>先講目標客群，再講 7 項需求和 1–5 分的重要性</p></div></li>
+<li><span class="pno">P4</span><div><h3><span class="min">1 分 30 秒</span>Technical Requirements</h3><p>把主觀需求轉成工程團隊能測量的指標，強調 Active Lean Technology</p></div></li>
 </ol>
+<p class="label">P3 的內容素材（重要性是小組評估，要標註）</p>
+<div class="tw"><table><thead><tr><th>顧客需求</th><th>重要性</th><th>理由</th></tr></thead><tbody><tr><th>D1 安全與轉彎穩定</th><td class="nw"><span class="pips" aria-label="重要性 5 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span> 5</td><td>三輪窄車體要確保轉彎安全</td></tr><tr><th>D2 遮風避雨與舒適</th><td class="nw"><span class="pips" aria-label="重要性 5 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span> 5</td><td>解決機車怕日曬雨淋</td></tr><tr><th>D3 都市靈活與停車便利</th><td class="nw"><span class="pips" aria-label="重要性 5 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span> 5</td><td>符合都市微型移動定位</td></tr><tr><th>D4 價格可負擔</th><td class="nw"><span class="pips" aria-label="重要性 4 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span> 4</td><td>和一般機車有明顯價差</td></tr><tr><th>D5 足夠的續航</th><td class="nw"><span class="pips" aria-label="重要性 4 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span> 4</td><td>滿足每日通勤與短途</td></tr><tr><th>D6 充電便利</th><td class="nw"><span class="pips" aria-label="重要性 3 分"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span> 3</td><td>降低電動車使用門檻</td></tr><tr><th>D7 雙人乘坐與實用</th><td class="nw"><span class="pips" aria-label="重要性 4 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span> 4</td><td>載人、接送與日常需求</td></tr></tbody></table></div>
 <p class="label">P4 的內容素材</p>
-<div class="facets">
-<div class="facet"><b>流程</b><span>Phase 0–IV、快速做原型、腦力激盪</span></div>
-<div class="facet"><b>組織</b><span>很扁平、專案制、維持小工作室</span></div>
-<div class="facet"><b>文化</b><span>鼓勵試錯、愛玩、好點子不分職位</span></div>
-<div class="facet"><b>管理</b><span>同儕評估、常跟客戶開會、控制超支</span></div>
-</div>
-<p class="read"><span>要讀</span><span class="pg"><b>p.2–3</b> 公司背景，快速掃過</span><span class="pg"><b>p.4–8</b> 文化、組織、流程，重點</span><span class="pg"><b>p.10–11</b> Palm V 實例</span><span class="pg"><b>Ex.3、5、6</b> 流程和原型照片</span></p>
+<div class="tw"><table><thead><tr><th>代碼</th><th>技術特性</th><th>怎麼衡量</th></tr></thead><tbody><tr><th>T1</th><td>主動傾斜與穩定控制</td><td>車身傾角、控制反應</td></tr><tr><th>T2</th><td>車身尺寸與轉向設計</td><td>車寬、迴轉半徑</td></tr><tr><th>T3</th><td>車體結構與安全防護</td><td>結構強度、安全測試</td></tr><tr><th>T4</th><td>電池與能源效率</td><td>電池容量、實際續航</td></tr><tr><th>T5</th><td>充電系統</td><td>充電時間、效率</td></tr><tr><th>T6</th><td>車艙空調與舒適系統</td><td>溫控能力、空調耗能</td></tr><tr><th>T7</th><td>量產與成本工程</td><td>製造成本、零件數</td></tr></tbody></table></div>
 </div>
 </section>
+<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>羽芊交棒給小魚：</b>需求和技術都列好了，接著看 Lean3 跟對手比起來站在哪裡。</p></div>
 
-<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>筱于交棒給芊：</b>這套做法要有時間試錯，但 Visor 給的時間不到一半。</p></div>
-
-<section class="stage qian" id="s3" style="padding-top:14px">
-<div class="shead"><h2>第 3 段｜Q6：該接受這個時程嗎？</h2><span class="by">芊｜P7–P8｜9:00–12:00</span></div>
+<section class="stage yu" id="s3">
+<div class="shead"><h2>第 3 段｜競品比較與屋頂（要求 4、5）</h2><span class="by">小魚｜P5–P7｜6:00–12:00</span></div>
 <div class="sbody">
-<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>接受的好處很實在，但照原條件接，代價就是 IDEO 的招牌</p></div>
+<div class="keep"><small>這段結束時，台下要知道</small><p>Lean3 贏在窄和主動傾斜，但每項改善都有代價</p></div>
 <ol class="slides">
-<li><span class="pno">P7</span><div><h3><span class="min">2 分鐘</span>接受的理由和代價</h3><p>做成左右對照的天秤，兩邊都從個案舉例</p></div></li>
-<li><span class="pno">P8</span><div><h3><span class="min">1 分鐘</span>Q6 的回答 <span class="tent">暫定</span></h3><p>值得接，但不應該照原條件接</p></div></li>
+<li><span class="pno">P5</span><div><h3><span class="min">2 分鐘</span>Lean3 vs. Ami vs. C+pod</h3><p>用下面的比較圖，一眼看出三台車的差異</p></div></li>
+<li><span class="pno">P6</span><div><h3><span class="min">1 分 30 秒</span>比較出來的三個結論</h3><p>最窄、唯一有主動傾斜且時速較高，但續航低於 C+pod</p></div></li>
+<li><span class="pno">P7</span><div><h3><span class="min">2 分 30 秒</span>屋頂：技術之間的取捨</h3><p>用三角矩陣圖，挑兩組例子講，例如電池變大會讓充電變久</p></div></li>
 </ol>
-<p class="label">P7 的內容素材</p>
-<div class="scale">
-<div class="side"><b>接受的理由</b><ul><li>雙方合作過，默契好</li><li>Springboard 是全新的機會</li><li>IDEO 有能力趕上困難的期限</li></ul></div>
-<div class="side"><b>接受的代價</b><ul><li>前期探索被壓縮</li><li>只能用成熟技術，設計要妥協</li><li>要對公司同事保密，相處尷尬</li></ul></div>
-</div>
-<p class="read"><span>要讀</span><span class="pg"><b>p.12–13</b> 時程、成本和 Boyle 的顧慮</span></p>
-</div>
-</section>
-
-<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>芊交棒給美樂蒂：</b>照原條件接的代價不小，那還有其他路嗎？</p></div>
-
-<section class="stage mel" id="s4" style="padding-top:14px">
-<div class="shead"><h2>第 4 段｜Q7：要說服對方，還是婉拒？</h2><span class="by">美樂蒂｜P9–P10｜12:00–16:00</span></div>
-<div class="sbody">
-<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>單純延後或直接婉拒，都有一方會受傷，所以要談的是條件</p></div>
-<ol class="slides">
-<li><span class="pno">P9</span><div><h3><span class="min">2 分 30 秒</span>三條路，兩邊看</h3><p>用下面的表格比較，老師要求同時考慮 IDEO 和 Handspring</p></div></li>
-<li><span class="pno">P10</span><div><h3><span class="min">1 分 30 秒</span>Q7 的回答 <span class="tent">暫定</span></h3><p>不婉拒，也不只是要求延期，而是找雙方都能接受的做法</p></div></li>
-</ol>
-<p class="label">P9 的表格草稿，可以再改</p>
-<div class="tw"><table>
-<thead><tr><th>選項</th><th>對 IDEO</th><th>對 Handspring</th></tr></thead>
-<tbody>
-<tr><th>接受</th><td>留住客戶，但創新招牌打折</td><td>趕上 1999 年底檔期，設計較保守</td></tr>
-<tr><th>說服延後</th><td>能走完流程，做出更好的產品</td><td>錯過檔期，新標準較晚普及</td></tr>
-<tr><th>婉拒</th><td>保住流程、改接候補客戶，但可能傷到關係</td><td>要另找設計夥伴，時程更緊</td></tr>
+<p class="label">P5 的比較圖</p>
+<div class="mts"><div class="mt"><p class="mt-t">車寬<span>越窄越靈活</span></p><div class="mr me"><span class="nm">Lean3</span><span class="tr"><span class="fill" style="width:69.8%"></span></span><span class="vl">970 mm</span></div><div class="mr"><span class="nm">C+pod</span><span class="tr"><span class="fill" style="width:92.8%"></span></span><span class="vl">1,290 mm</span></div><div class="mr"><span class="nm">Ami</span><span class="tr"><span class="fill" style="width:100.0%"></span></span><span class="vl">1,390 mm</span></div></div><div class="mt"><p class="mt-t">最高時速<span>越高越好</span></p><div class="mr me"><span class="nm">Lean3</span><span class="tr"><span class="fill" style="width:100.0%"></span></span><span class="vl">80 km/h</span></div><div class="mr"><span class="nm">C+pod</span><span class="tr"><span class="fill" style="width:75.0%"></span></span><span class="vl">60 km/h</span></div><div class="mr"><span class="nm">Ami</span><span class="tr"><span class="fill" style="width:56.2%"></span></span><span class="vl">45 km/h</span></div></div><div class="mt"><p class="mt-t">續航<span>測試方式不同，僅供參考</span></p><div class="mr"><span class="nm">C+pod</span><span class="tr"><span class="fill" style="width:100.0%"></span></span><span class="vl">150 km</span></div><div class="mr me"><span class="nm">Lean3</span><span class="tr"><span class="fill" style="width:66.7%"></span></span><span class="vl">100 km</span></div><div class="mr"><span class="nm">Ami</span><span class="tr"><span class="fill" style="width:50.0%"></span></span><span class="vl">75 km</span></div></div></div>
+<div class="tw" style="margin-top:10px"><table><thead><tr><th>其他項目</th><th>Lean3</th><th>Citroën Ami</th><th>Toyota C+pod</th></tr></thead><tbody>
+<tr><th>電池</th><td>8.1 kWh</td><td>約 5.4 kWh</td><td>9.06 kWh</td></tr>
+<tr><th>標準充電</th><td>220V 約 5 h</td><td>約 4 h</td><td>200V 約 5 h</td></tr>
+<tr><th>主動傾斜</th><td>有</td><td>無</td><td>無</td></tr>
+<tr><th>備註</th><td>台灣預購</td><td>歐洲城市微型車</td><td>已停產，當歷史標竿</td></tr>
 </tbody></table></div>
-<p class="read"><span>要讀</span><span class="pg"><b>p.11–13</b> 決策情境，重點</span><span class="pg"><b>全案</b> 整體看過一次</span></p>
+<p class="label">P7 的屋頂圖：兩項技術的交會格就是它們的關係</p>
+<div class="roof"><svg viewBox="0 0 480 254" role="img" aria-label="品質屋屋頂：T1 與 T2 正相關；T1 與 T7、T3 與 T4、T3 與 T7、T4 與 T5、T4 與 T6、T6 與 T7 負相關"><path d="M90 166L119 195L90 224L61 195Z" fill="var(--accent)" fill-opacity=".22" stroke="var(--line)"/><text x="90" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">+</text><path d="M120 136L149 165L120 194L91 165Z" fill="none" stroke="var(--line)"/><path d="M150 106L179 135L150 164L121 135Z" fill="none" stroke="var(--line)"/><path d="M180 76L209 105L180 134L151 105Z" fill="none" stroke="var(--line)"/><path d="M210 46L239 75L210 104L181 75Z" fill="none" stroke="var(--line)"/><path d="M240 16L269 45L240 74L211 45Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="240" y="51" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M150 166L179 195L150 224L121 195Z" fill="none" stroke="var(--line)"/><path d="M180 136L209 165L180 194L151 165Z" fill="none" stroke="var(--line)"/><path d="M210 106L239 135L210 164L181 135Z" fill="none" stroke="var(--line)"/><path d="M240 76L269 105L240 134L211 105Z" fill="none" stroke="var(--line)"/><path d="M270 46L299 75L270 104L241 75Z" fill="none" stroke="var(--line)"/><path d="M210 166L239 195L210 224L181 195Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="210" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M240 136L269 165L240 194L211 165Z" fill="none" stroke="var(--line)"/><path d="M270 106L299 135L270 164L241 135Z" fill="none" stroke="var(--line)"/><path d="M300 76L329 105L300 134L271 105Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="300" y="111" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M270 166L299 195L270 224L241 195Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="270" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M300 136L329 165L300 194L271 165Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="300" y="171" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M330 106L359 135L330 164L301 135Z" fill="none" stroke="var(--line)"/><path d="M330 166L359 195L330 224L301 195Z" fill="none" stroke="var(--line)"/><path d="M360 136L389 165L360 194L331 165Z" fill="none" stroke="var(--line)"/><path d="M390 166L419 195L390 224L361 195Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="390" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><text x="60" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T1 傾斜</text><text x="120" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T2 車身</text><text x="180" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T3 安全</text><text x="240" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T4 電池</text><text x="300" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T5 充電</text><text x="360" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T6 空調</text><text x="420" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T7 成本</text></svg></div>
+<p class="key"><span><b>＋</b> 正相關，互相幫忙</span><span><b>−</b> 負相關，要做取捨</span><span>空白：無明顯關係</span></p>
 </div>
 </section>
+<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>小魚交棒給宛云：</b>技術會互相牽制，不可能全部都做到最好，所以要算分數排順序。</p></div>
 
-<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>美樂蒂接著講：</b>那具體要怎麼談？</p></div>
-
-<section class="stage mel" id="s5" style="padding-top:14px">
-<div class="shead"><h2>第 5 段｜結論：我們的建議</h2><span class="by">美樂蒂｜P11–P12｜16:00–19:00</span></div>
+<section class="stage mel" id="s4">
+<div class="shead"><h2>第 4 段｜矩陣與計分（要求 6、7）</h2><span class="by">宛云｜P8–P9｜12:00–16:30</span></div>
 <div class="sbody">
-<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>有條件接案，讓流程跟著專案調整 <span class="tent">暫定</span></p></div>
+<div class="keep"><small>這段結束時，台下要知道</small><p>車體安全和傾斜控制最優先，分數是這樣算出來的</p></div>
 <ol class="slides">
-<li><span class="pno">P11</span><div><h3><span class="min">2 分鐘</span>最終建議</h3><p>說清楚三件具體要談的事，以及為什麼雙方都能接受</p></div></li>
-<li><span class="pno">P12</span><div><h3><span class="min">1 分鐘</span>連回課堂、收尾</h3><p>一句話連回 Cooper（2008）的可調式 Stage-Gate：專案不同，流程也可以調整</p></div></li>
+<li><span class="pno">P8</span><div><h3><span class="min">2 分鐘</span>需求×技術關係矩陣</h3><p>說明 9、3、1、0 的意思，舉 D1×T1、D2×T6、D5×T4 三個例子</p></div></li>
+<li><span class="pno">P9</span><div><h3><span class="min">2 分 30 秒</span>Absolute 和 Relative Scores</h3><p>用 T1 示範 Absolute，用 T3 示範 Relative，再放排名圖</p></div></li>
 </ol>
-<p class="label">P11 的內容素材</p>
-<ol class="reco">
-<li>答應 Handspring 的檔期</li>
-<li>保留精簡版的前期探索</li>
-<li>鎖定產品範圍，把設計重點放在 Springboard</li>
+<p class="label">P8 的關係矩陣（9 強、3 中、1 弱、0 無）</p>
+<div class="tw"><table class="hm"><thead><tr><th>顧客需求</th><th>重要性</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th><th>T7</th></tr></thead><tbody><tr><th>D1 安全與轉彎穩定</th><td class="wt">5</td><td class="h9">9</td><td class="h1">1</td><td class="h9">9</td><td class="h0">·</td><td class="h0">·</td><td class="h1">1</td><td class="h1">1</td></tr><tr><th>D2 遮風避雨與舒適</th><td class="wt">5</td><td class="h0">·</td><td class="h0">·</td><td class="h3">3</td><td class="h0">·</td><td class="h0">·</td><td class="h9">9</td><td class="h1">1</td></tr><tr><th>D3 都市靈活與停車便利</th><td class="wt">5</td><td class="h9">9</td><td class="h9">9</td><td class="h1">1</td><td class="h1">1</td><td class="h0">·</td><td class="h0">·</td><td class="h3">3</td></tr><tr><th>D4 價格可負擔</th><td class="wt">4</td><td class="h1">1</td><td class="h3">3</td><td class="h3">3</td><td class="h3">3</td><td class="h3">3</td><td class="h3">3</td><td class="h9">9</td></tr><tr><th>D5 足夠的續航</th><td class="wt">4</td><td class="h1">1</td><td class="h3">3</td><td class="h1">1</td><td class="h9">9</td><td class="h1">1</td><td class="h3">3</td><td class="h1">1</td></tr><tr><th>D6 充電便利</th><td class="wt">3</td><td class="h0">·</td><td class="h0">·</td><td class="h0">·</td><td class="h3">3</td><td class="h9">9</td><td class="h0">·</td><td class="h1">1</td></tr><tr><th>D7 雙人乘坐與實用</th><td class="wt">4</td><td class="h1">1</td><td class="h3">3</td><td class="h9">9</td><td class="h1">1</td><td class="h0">·</td><td class="h3">3</td><td class="h3">3</td></tr><tr class="sum"><th colspan="2">Absolute</th><td>102</td><td>86</td><td>117</td><td>66</td><td>43</td><td>86</td><td>80</td></tr><tr class="sum"><th colspan="2">Relative</th><td>17.6%</td><td>14.8%</td><td>20.2%</td><td>11.4%</td><td>7.4%</td><td>14.8%</td><td>13.8%</td></tr></tbody></table></div>
+<p class="cap">分數已重新計算，和文件一致。矩陣是小組判斷，不是官方或顧客調查資料。</p>
+<p class="label">P9 的排名圖（Absolute｜Relative）</p>
+<ol class="rank"><li title="T3 車體安全：Absolute 117，Relative 20.2%"><span class="rk">1</span><span class="nm">T3 車體安全</span><span class="tr"><span class="fill top" style="width:100.0%"></span></span><span class="vl">117｜20.2%</span></li><li title="T1 傾斜控制：Absolute 102，Relative 17.6%"><span class="rk">2</span><span class="nm">T1 傾斜控制</span><span class="tr"><span class="fill top" style="width:87.1%"></span></span><span class="vl">102｜17.6%</span></li><li title="T2 車身轉向：Absolute 86，Relative 14.8%"><span class="rk">3</span><span class="nm">T2 車身轉向</span><span class="tr"><span class="fill" style="width:73.3%"></span></span><span class="vl">86｜14.8%</span></li><li title="T6 空調舒適：Absolute 86，Relative 14.8%"><span class="rk">3</span><span class="nm">T6 空調舒適</span><span class="tr"><span class="fill" style="width:73.3%"></span></span><span class="vl">86｜14.8%</span></li><li title="T7 成本工程：Absolute 80，Relative 13.8%"><span class="rk">5</span><span class="nm">T7 成本工程</span><span class="tr"><span class="fill" style="width:68.3%"></span></span><span class="vl">80｜13.8%</span></li><li title="T4 電池效率：Absolute 66，Relative 11.4%"><span class="rk">6</span><span class="nm">T4 電池效率</span><span class="tr"><span class="fill" style="width:56.4%"></span></span><span class="vl">66｜11.4%</span></li><li title="T5 充電系統：Absolute 43，Relative 7.4%"><span class="rk">7</span><span class="nm">T5 充電系統</span><span class="tr"><span class="fill" style="width:36.6%"></span></span><span class="vl">43｜7.4%</span></li></ol>
+<p class="formula">Absolute：各需求的「重要性 × 關聯分數」加總。T1 = 5×9 + 5×0 + 5×9 + 4×1 + 4×1 + 3×0 + 4×1 = 102</p>
+<p class="formula">Relative：該技術的 Absolute ÷ 全部總和。T3 = 117 ÷ 580 = 20.2%</p>
+</div>
+</section>
+<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>宛云接著講：</b>分數算出來了，怎麼變成設計規格？</p></div>
+
+<section class="stage mel" id="s5">
+<div class="shead"><h2>第 5 段｜設計規格與結論（要求 8）</h2><span class="by">宛云｜P10–P11｜16:30–19:00</span></div>
+<div class="sbody">
+<div class="keep"><small>這段結束時，台下要知道</small><p>Lean3 要先顧好安全和操控，同時平衡舒適、續航與成本</p></div>
+<ol class="slides">
+<li><span class="pno">P10</span><div><h3><span class="min">1 分 30 秒</span>Main Design Specifications</h3><p>照分數排名，對照已公布規格和研發建議</p></div></li>
+<li><span class="pno">P11</span><div><h3><span class="min">1 分鐘</span>結論</h3><p>回答核心問題，並說明分數代表需求影響，不等於實際研發預算比例</p></div></li>
 </ol>
-<p class="read"><span>要讀</span><span class="pg"><b>Reading 8-1</b> 可調式 Stage-Gate</span></p>
+<p class="label">P10 的內容素材</p>
+<div class="tw"><table><thead><tr><th>技術</th><th>已公布規格</th><th>研發建議</th></tr></thead><tbody>
+<tr><th>T3 車體安全</th><td>鋼製結構、前後碟煞、ISOFIX</td><td>加強結構與碰撞安全驗證</td></tr>
+<tr><th>T1 傾斜控制</th><td>Active Lean Technology</td><td>優化轉彎控制精度與可靠性</td></tr>
+<tr><th>T2 車身轉向</th><td>車寬 970 mm、迴轉半徑 3.6 m</td><td>維持窄車體優勢並改善操控</td></tr>
+<tr><th>T6 空調舒適</th><td>標配冷氣、暖氣選配</td><td>提升低耗能空調性能</td></tr>
+<tr><th>T7 成本工程</th><td>預購價 NT$328,000 起</td><td>零件共用、模組化與製程優化</td></tr>
+<tr><th>T4 電池效率</th><td>8.1 kWh、100 km WLTC</td><td>提高能源效率，減少空調耗電影響</td></tr>
+<tr><th>T5 充電系統</th><td>220V 約 5 小時</td><td>提升充電效率與便利性</td></tr>
+</tbody></table></div>
+<p class="label">P11 可以用的英文結論</p>
+<p class="en">Based on the QFD analysis, vehicle safety and active lean control are Lean3's top technical priorities, followed by compact vehicle design and cabin comfort. Future R&amp;D should strengthen safety and driving stability while balancing comfort, energy efficiency, and production cost.</p>
 </div>
 </section>
 
 <section class="final" id="todo">
-<h2>開始做之前先確認</h2>
+<h2>做投影片之前先確認</h2>
 <ul class="check">
-<li><span>先一起定結論。Q6、Q7 和結論都標了暫定，三段要站同一邊，所以這件事最優先</span></li>
-<li><span>確認 20 分鐘是否包含問答，以及 Exercise 8 的 QFD 要不要一起報。這份配置先假設 20 分鐘都用來報 Q5–Q7</span></li>
-<li><span>決定投影片由誰整合，以及各段的交件時間</span></li>
+<li><span><strong>全組確認矩陣分數。</strong>第一名很敏感：D1×T3 或 D7×T3 任一格從 9 改成 3，T3 就會掉到 87 或 93，第一名變成 T1。特別是 D7 雙人實用和車體安全，要講得出為什麼是強相關</span></li>
+<li><span><strong>問元杰有沒有指定格式。</strong>上課如果有品質屋範例或 Excel 模板，五大部分和計分方式以那個版本為準</span></li>
+<li><span><strong>標清楚資料性質。</strong>重要性和矩陣分數要寫「研究小組評估」，不是顧客調查或 Lean Mobility 官方資料</span></li>
+<li><span><strong>核對還沒確認的數字。</strong>迴轉半徑 3.6 m、Ami 約 4 小時和 C+pod 約 5 小時的充電時間，我還沒查到可確認的來源，放上投影片前要對官方頁面。Ami 的電池有 5.4 和 5.5 kWh 兩種寫法，記得註明來源</span></li>
+<li><span><strong>先不要主打好停車。</strong>媒體提到汽車格和機車格都能停，但車寬停機車格可能有問題，P6 只講車窄的靈活優勢</span></li>
+<li><span><strong>11/18 前各自交給旻泓</strong>（建議），留一天整合，11/19 由旻泓繳交簡報</span></li>
 </ul>
 </section>
 
 </main>
-<footer>個案來源：Thomke &amp; Nimgade，IDEO，HBS 9-600-143（2017 修訂版）。頁碼依這份 PDF。</footer>
+<footer>內容依組內文件「rd excerise8 駕艙機車」整理。Lean3 規格核對：<a href="https://www.mirrormedia.mg/story/amp/20260508-car-testdrive-lean3">鏡週刊試駕</a>；法規與停車：<a href="https://www.nownews.com/news/6784210">NOWnews</a>；競品：<a href="https://en.wikipedia.org/wiki/Toyota_C%2Bpod">Toyota C+pod</a>、<a href="https://www.auto-data.net/en/citroen-ami-electric-5.5-kwh-8hp-39251">Citroën Ami</a>。</footer>
 </div>
 
 </body>
