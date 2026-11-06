@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>IDEO 個案分工</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="R&D Management Topic 8：IDEO 個案的報告流程、投影片順序與三人分工">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap">
+<style>
+/* Layout: 單欄長頁，從頭到尾照報告順序走；頂端色條同時是導覽。字體沿用可樂頁，底色沿用微軟 proposal 封面的淡紫漸層 */
+:root{
+--g1:#E1D9F6;--g2:#F2F0FB;--g3:#FAFAFD;--nav:#F2F0FB;--panel:rgba(255,255,255,.72);--solid:#FFFFFF;
+--ink:#1C1F4A;--muted:#4A4E6E;--faint:#6B6E8E;--line:#DAD6EE;--accent:#3E4BB5;--hot:#B4560F;--on:#FFFFFF;
+--qian:#A8478C;--qian-t:#F6E4F1;--yu:#14788A;--yu-t:#D9EEF2;--mel:#3E4BB5;--mel-t:#E2E4F8;
+--display:"Noto Serif TC",serif;--body:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g1:#2E2852;--g2:#1E1B38;--g3:#16152B;--nav:#1E1B38;--panel:rgba(255,255,255,.055);--solid:#25224A;--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--on:#16152B;--qian:#E79BD0;--qian-t:#472A45;--yu:#6FCEDD;--yu-t:#1D3F49;--mel:#A9B2F5;--mel-t:#2F3160;color-scheme:dark}}
+:root[data-theme="dark"]{--g1:#2E2852;--g2:#1E1B38;--g3:#16152B;--nav:#1E1B38;--panel:rgba(255,255,255,.055);--solid:#25224A;--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--on:#16152B;--qian:#E79BD0;--qian-t:#472A45;--yu:#6FCEDD;--yu-t:#1D3F49;--mel:#A9B2F5;--mel-t:#2F3160;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--g2);background-image:radial-gradient(ellipse at 88% 100%,var(--g1) 0%,var(--g2) 48%,var(--g3) 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--nav)}
+.wrap{max-width:880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+p{margin:0}ul,ol{margin:0;padding:0;list-style:none}strong{color:var(--accent)}a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.hero .wrap{padding-block:52px 22px}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.08em;color:var(--accent);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin-bottom:16px}
+h1{font-family:var(--display);font-size:clamp(26px,4.6vw,40px);line-height:1.3;margin:0 0 10px;text-wrap:balance}
+.meta{color:var(--muted);font-size:15px;max-width:38em}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--nav);border-block:1px solid var(--line)}
+.flow{display:flex;gap:3px;padding-block:8px}
+.flow li{min-width:0}
+.flow a{display:block;padding:6px 8px;text-decoration:none;color:var(--on);border-radius:4px;line-height:1.3}
+.flow b{display:block;font-size:14px}.flow span{display:block;font-size:12px}
+.f-q a{background:var(--qian)}.f-y a{background:var(--yu)}.f-m a{background:var(--mel)}
+.flow a:hover b{text-decoration:underline}
+
+h2{font-family:var(--display);font-size:clamp(20px,3vw,26px);line-height:1.4;margin:0 0 12px;text-wrap:balance}
+.lead{max-width:38em;margin-bottom:16px}
+.overview{padding-block:30px 8px}
+.tw{overflow-x:auto;margin-top:14px;border-radius:10px}
+.summary{padding-block:30px 0}.summary .lead{margin-bottom:10px}
+.core{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.55;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-top:14px}
+.core small{display:block;font-family:var(--body);font-weight:400;font-size:12.5px;color:var(--faint)}
+.tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin-top:14px}
+.tl li{background:var(--panel);padding:8px 10px;min-width:0;font-size:13.5px;line-height:1.5}
+.tl b{display:block;font-size:14px;color:var(--accent);font-variant-numeric:tabular-nums}
+.tl li.now{background:var(--accent);color:var(--on)}.tl li.now b{color:var(--on)}
+.qs{margin-top:14px}.qs li{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:0 12px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6}
+.qs li:last-child{border-bottom:0}.qs .q{font-weight:700;color:var(--c)}.qs a{font-size:13.5px;color:var(--c);white-space:nowrap}
+table{width:100%;min-width:560px;border-collapse:collapse;background:var(--panel);font-size:14.5px;line-height:1.55}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+thead th{font-size:13px;color:var(--muted);font-weight:500}
+tbody th{font-weight:700;white-space:nowrap}tr:last-child th,tr:last-child td{border-bottom:0}
+.tag{font-weight:700;color:var(--c)}
+td a{color:var(--c);font-weight:500}.nw{white-space:nowrap}
+.pp{font-variant-numeric:tabular-nums}
+
+.qian{--c:var(--qian);--t:var(--qian-t)}.yu{--c:var(--yu);--t:var(--yu-t)}.mel{--c:var(--mel);--t:var(--mel-t)}
+
+.stage{padding-top:34px;scroll-margin-top:70px}
+.shead{background:var(--c);color:var(--on);border-radius:10px 10px 0 0;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
+.shead h2{font-size:clamp(19px,2.8vw,23px);margin:0;color:inherit}
+.shead .by{font-size:14px;margin-left:auto;font-weight:500}
+.sbody{background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;padding:14px 16px 16px}
+.ask{font-size:15px;color:var(--muted)}
+.keep{background:var(--t);padding:8px 14px;margin-top:10px;border-radius:6px}
+.keep small{display:block;font-size:12.5px;color:var(--muted)}
+.keep p{font-family:var(--display);font-weight:700;font-size:17.5px;line-height:1.55}
+
+.slides{margin-top:14px;border-top:1px solid var(--line)}
+.slides li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.pno{font-weight:700;font-size:14px;color:var(--c);background:var(--t);border-radius:4px;text-align:center;height:28px;line-height:28px;font-variant-numeric:tabular-nums}
+.slides h3{font-size:16px;line-height:1.45;margin:0}
+.slides p{font-size:14.5px;line-height:1.6;color:var(--muted)}
+
+.label{font-size:13px;color:var(--faint);margin:16px 0 6px}
+.story{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.panel{background:var(--solid);border:1px solid var(--line);border-radius:8px;padding:10px 10px 12px;min-width:0}
+.panel svg{display:block;width:100%;height:auto}
+.panel h4{font-size:15px;margin:8px 0 2px;line-height:1.4}
+.panel p{font-size:13px;line-height:1.55;color:var(--muted)}
+.scroll{overflow-x:auto;background:var(--solid);border:1px solid var(--line);border-radius:8px;padding:12px}
+.scroll svg{display:block;width:100%;min-width:600px;height:auto}
+figure{margin:0}
+.cap{font-size:12.5px;color:var(--faint);margin-top:6px}
+.sbody table{background:var(--solid)}.sbody .tw{border:1px solid var(--line);border-radius:8px}
+
+.facets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
+.facet{background:var(--t);padding:9px 10px 10px;min-width:0}
+.facet b{display:block;font-size:15px}.facet span{display:block;font-size:13px;line-height:1.5}
+.scale{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.side{background:var(--solid);border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.side b{display:block;margin-bottom:2px}.side li{font-size:14.5px;line-height:1.6;margin:3px 0;padding-left:14px;position:relative}
+.side li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--c)}
+.reco{counter-reset:r;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.reco li{background:var(--t);border-radius:8px;padding:10px 12px;font-size:14.5px;line-height:1.6;counter-increment:r}
+.reco li::before{content:counter(r);display:block;font-weight:700;color:var(--c)}
+.tent{display:inline-block;font-size:12.5px;color:var(--faint);border:1px dashed var(--faint);border-radius:999px;padding:0 8px;margin-left:6px;vertical-align:1px;white-space:nowrap}
+
+.read{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13.5px;align-items:baseline}
+.read>span:first-child{color:var(--faint)}
+.read .pg{background:var(--t);border-radius:4px;padding:1px 8px;line-height:1.6}.read .pg b{color:var(--c)}
+
+.pass{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 10px;align-items:center;margin:14px 0 0 12px;font-size:14.5px;color:var(--muted)}
+.pass svg{display:block;width:18px;height:36px}
+.pass b{color:var(--ink)}
+
+.final{padding-block:40px 0}
+.check li{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
+.check li:last-child{border-bottom:0}
+.check li::before{content:"";flex:none;width:12px;height:12px;border:1.5px solid var(--accent);border-radius:3px;transform:translateY(1px)}
+footer{margin-top:36px;padding-block:16px 44px;border-top:1px solid var(--line);font-size:13px;color:var(--faint)}
+
+@media (max-width:680px){
+body{font-size:15px}.hero .wrap{padding-block:38px 18px}
+.flow a{padding:6px 3px;text-align:center}.flow span{display:none}.flow b{font-size:13px}
+.tl{grid-template-columns:minmax(0,1fr)}.tl li{display:grid;grid-template-columns:68px minmax(0,1fr);gap:8px}.qs li{grid-template-columns:36px minmax(0,1fr);gap:0 8px}.qs a{grid-column:2}
+.story{grid-template-columns:repeat(2,minmax(0,1fr))}.facets{grid-template-columns:repeat(2,minmax(0,1fr))}.scale,.reco{grid-template-columns:minmax(0,1fr)}
+.sbody{padding-inline:12px}.sbody table{min-width:0}.sbody th,.sbody td{padding:8px}.sbody tbody th{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<header class="hero"><div class="wrap">
+<span class="eyebrow">清大科管所｜R&amp;D Management Topic 8｜11/20</span>
+<h1>IDEO 個案分工</h1>
+<p class="meta">從開場到結論照順序走一次。下面的色條是報告順序，長度代表工作量，點一下可以跳到那一段，往下滑時也會一直留在畫面上。</p>
+</div></header>
+
+<nav class="bar" aria-label="報告順序與工作量"><div class="wrap"><ol class="flow">
+<li class="f-q" style="flex:10 1 0"><a href="#s1"><b>開場</b><span>芊</span></a></li>
+<li class="f-y" style="flex:30 1 0"><a href="#s2"><b>Q5</b><span>筱于</span></a></li>
+<li class="f-q" style="flex:20 1 0"><a href="#s3"><b>Q6</b><span>芊</span></a></li>
+<li class="f-m" style="flex:25 1 0"><a href="#s4"><b>Q7</b><span>美樂蒂</span></a></li>
+<li class="f-m" style="flex:15 1 0"><a href="#s5"><b>結論</b><span>美樂蒂</span></a></li>
+</ol></div></nav>
+
+<div class="wrap">
+<main>
+
+<section class="summary">
+<h2>個案在講什麼</h2>
+<p class="lead">IDEO 是 1990 年代得獎最多的產品設計公司，強項是用大量原型和腦力激盪做創新。專案負責人 Dennis Boyle 剛幫 Palm 做完精緻的 Palm V，Palm Pilot 的推手 Hawkins 和 Dubinsky 就離開 3Com、成立 Handspring，回頭請他設計新機 Visor。</p>
+<p class="lead">Handspring 要 Visor 便宜、能插擴充模組，還要趕上 1999 年底的節慶檔期，開發時間不到 Palm V 的一半。Boyle 最擔心的是，這樣會犧牲 IDEO 最有名的前期探索。</p>
+<ol class="tl" aria-label="個案時間脈絡">
+<li><b>1991</b><span>IDEO 由三家公司合併成立</span></li>
+<li><b>1996/3</b><span>Palm Pilot 上市，大受歡迎</span></li>
+<li><b>1996 底</b><span>IDEO 開始做 Palm V</span></li>
+<li class="now"><b>1998 夏</b><span>Handspring 成立並找上 IDEO，Boyle 要做決定</span></li>
+<li><b>1999 底</b><span>Handspring 希望 Visor 上市</span></li>
+</ol>
+<p class="core"><small>核心問題</small>客戶要的速度，和公司最強的做法衝突時，IDEO 該怎麼選？</p>
+<p class="label">老師要我們回答的三題</p>
+<ol class="qs">
+<li class="yu"><span class="q">Q5</span><span>IDEO 的流程、組織、文化和管理有什麼特色？</span><a href="#s2">筱于，第 2 段</a></li>
+<li class="qian"><span class="q">Q6</span><span>IDEO 該接受不到 Palm V 一半的時程嗎？</span><a href="#s3">芊，第 3 段</a></li>
+<li class="mel"><span class="q">Q7</span><span>該說服 Handspring 多給時間，還是直接婉拒？要從雙方角度考慮</span><a href="#s4">美樂蒂，第 4 段</a></li>
+</ol>
+</section>
+
+<section class="overview">
+<h2>每個人的 part</h2>
+<p class="lead">全程共 5 段、建議 12 頁。芊分成兩段，中間由筱于講 Q5，順序就跟老師的題目一樣。</p>
+<div class="tw"><table>
+<thead><tr><th>組員</th><th>比重</th><th>負責哪幾段</th><th>投影片</th><th>這部分要讓台下記住</th></tr></thead>
+<tbody>
+<tr class="qian"><th><span class="tag">芊</span></th><td class="pp">約 30%</td><td class="nw"><a href="#s1">第 1 段 開場</a><br><a href="#s3">第 3 段 Q6</a></td><td class="pp nw">P1–P3<br>P7–P8</td><td>案子很吸引人，但接了要付出代價</td></tr>
+<tr class="yu"><th><span class="tag">筱于</span></th><td class="pp">約 30%</td><td class="nw"><a href="#s2">第 2 段 Q5</a></td><td class="pp nw">P4–P6</td><td>IDEO 的強項來自一整套做法，而且需要時間</td></tr>
+<tr class="mel"><th><span class="tag">美樂蒂</span></th><td class="pp">約 40%</td><td class="nw"><a href="#s4">第 4 段 Q7</a><br><a href="#s5">第 5 段 結論</a></td><td class="pp nw">P9–P10<br>P11–P12</td><td>我們的建議是什麼，為什麼雙方都說得通</td></tr>
+</tbody></table></div>
+<p class="cap">比重是工作量的估計，頁數也會依報告時間調整。</p>
+</section>
+
+<section class="stage qian" id="s1">
+<div class="shead"><h2>第 1 段｜開場：發生了什麼事？</h2><span class="by">芊｜P1–P3</span></div>
+<div class="sbody">
+<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>Boyle 手上有一個好案子，但時間不到上次的一半</p></div>
+<ol class="slides">
+<li><span class="pno">P1</span><div><h3>封面＋報告順序</h3><p>題目、組員，再用一句話說明今天會回答三個問題</p></div></li>
+<li><span class="pno">P2</span><div><h3>個案故事</h3><p>用下面四格講完：IDEO 是誰、Palm V、Handspring、Boyle 的兩難</p></div></li>
+<li><span class="pno">P3</span><div><h3>Palm V 和 Visor 差多少</h3><p>放時間比較圖和對照表，最後帶出接受、說服延後、婉拒三條路</p></div></li>
+</ol>
+<p class="label">P2 可以用的四格</p>
+<div class="story">
+<article class="panel">
+<svg viewBox="0 0 220 104" role="img" aria-label="1995 到 1998 年設計獎項：IDEO 32 座，ZIBA 20 座，Fitch 18 座">
+<g font-size="12" fill="var(--ink)"><text x="0" y="28">IDEO</text><text x="0" y="58">ZIBA</text><text x="0" y="88">Fitch</text></g>
+<rect x="42" y="16" width="144" height="16" fill="var(--accent)"/><rect x="42" y="46" width="90" height="16" fill="var(--faint)" fill-opacity=".5"/><rect x="42" y="76" width="81" height="16" fill="var(--faint)" fill-opacity=".5"/>
+<g font-size="13" font-weight="700" fill="var(--ink)"><text x="192" y="29">32</text><text x="138" y="59">20</text><text x="129" y="89">18</text></g>
+</svg>
+<h4>設計圈第一名</h4><p>IDEO 靠快速做原型和腦力激盪起家，1995–98 年得獎最多</p>
+</article>
+<article class="panel">
+<svg viewBox="0 0 220 104" role="img" aria-label="一排原型從粗糙泡棉逐漸變成精緻成品">
+<g stroke="var(--faint)" stroke-width="1.3">
+<rect x="4" y="30" width="26" height="40" rx="3" fill="var(--qian-t)"/><rect x="40" y="30" width="26" height="40" rx="3" fill="var(--qian-t)"/>
+<rect x="76" y="30" width="26" height="40" rx="3" fill="var(--g1)"/><rect x="112" y="30" width="26" height="40" rx="3" fill="var(--g1)"/>
+<rect x="148" y="30" width="26" height="40" rx="3" fill="var(--solid)"/><rect x="184" y="30" width="26" height="40" rx="5" fill="var(--solid)"/></g>
+<rect x="152" y="35" width="18" height="20" fill="var(--accent)" fill-opacity=".35"/><rect x="188" y="35" width="18" height="20" fill="var(--accent)" fill-opacity=".35"/>
+<text x="4" y="90" font-size="12" fill="var(--muted)">泡棉</text><text x="210" y="90" font-size="12" fill="var(--muted)" text-anchor="end">接近量產</text>
+</svg>
+<h4>Palm V 慢工細活</h4><p>做了 20–25 個原型，做出 11mm 厚的鋁殼機</p>
+</article>
+<article class="panel">
+<svg viewBox="0 0 220 104" role="img" aria-label="手持裝置背面有插槽，模組像遊戲卡帶一樣插入">
+<rect x="46" y="10" width="62" height="86" rx="6" fill="var(--solid)" stroke="var(--ink)" stroke-width="1.6"/>
+<rect x="56" y="48" width="42" height="36" rx="2" fill="none" stroke="var(--ink)" stroke-dasharray="4 3"/>
+<rect x="156" y="48" width="42" height="36" rx="3" fill="var(--accent)"/>
+<path d="M150 66H106M114 59l-9 7 9 7" fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="177" y="38" font-size="12" fill="var(--muted)" text-anchor="middle">擴充模組</text>
+</svg>
+<h4>老客戶開新公司</h4><p>Handspring 想做便宜又能插模組的 Visor，靈感來自 Game Boy 卡帶</p>
+</article>
+<article class="panel">
+<svg viewBox="0 0 220 104" role="img" aria-label="從 Boyle 分出三條路：接受、說服延後、婉拒">
+<circle cx="24" cy="52" r="11" fill="var(--accent)"/>
+<g fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round"><path d="M35 52C70 52 70 18 106 18"/><path d="M35 52H106"/><path d="M35 52C70 52 70 86 106 86"/></g>
+<g font-size="13.5" fill="var(--ink)" font-weight="700"><text x="114" y="23">接受</text><text x="114" y="57">說服延後</text><text x="114" y="91">婉拒</text></g>
+</svg>
+<h4>Boyle 的兩難</h4><p>接了，IDEO 最強的前期探索會被壓縮。他該怎麼選？</p>
+</article>
+</div>
+<p class="label">P3 可以用的比較圖</p>
+<figure>
+<div class="scroll">
+<svg viewBox="0 0 720 180" role="img" aria-label="開發時間比較：Palm V 約 22 個月，Visor 約 10 個月，不到一半">
+<text x="16" y="16" font-size="13" font-weight="700" fill="var(--accent)">前期探索：IDEO 的招牌</text>
+<path d="M16 22V28H151V22" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+<rect x="16" y="32" width="81" height="34" fill="var(--accent)"/>
+<rect x="98" y="32" width="53" height="34" fill="var(--accent)" fill-opacity=".78"/>
+<rect x="152" y="32" width="134" height="34" fill="var(--faint)" fill-opacity=".4"/>
+<rect x="287" y="32" width="323" height="34" fill="var(--faint)" fill-opacity=".25"/>
+<g font-size="12.5" text-anchor="middle">
+<text x="56" y="54" fill="var(--on)" font-weight="700">Phase 0</text>
+<text x="124" y="54" fill="var(--on)" font-weight="700">Phase I</text>
+<text x="219" y="54" fill="var(--ink)">Phase II</text>
+<text x="448" y="54" fill="var(--ink)">Phase III–IV</text>
+</g>
+<text x="618" y="46" font-size="14" font-weight="700" fill="var(--ink)">Palm V</text>
+<text x="618" y="63" font-size="13" fill="var(--muted)">約 22 個月</text>
+<rect x="16" y="84" width="270" height="34" fill="var(--hot)"/>
+<text x="151" y="106" font-size="12.5" text-anchor="middle" fill="var(--on)" font-weight="700">前期探索要大幅壓縮</text>
+<text x="294" y="98" font-size="14" font-weight="700" fill="var(--ink)">Visor</text>
+<text x="294" y="115" font-size="13" fill="var(--muted)">約 10 個月</text>
+<line x1="16" x2="610" y1="136" y2="136" stroke="var(--faint)" stroke-width="1"/>
+<g stroke="var(--faint)" stroke-width="1"><line x1="16" x2="16" y1="136" y2="142"/><line x1="178" x2="178" y1="136" y2="142"/><line x1="340" x2="340" y1="136" y2="142"/><line x1="502" x2="502" y1="136" y2="142"/></g>
+<g font-size="12.5" fill="var(--muted)" text-anchor="middle"><text x="24" y="158">開工</text><text x="178" y="158">6 個月</text><text x="340" y="158">12 個月</text><text x="502" y="158">18 個月</text></g>
+</svg>
+</div>
+<figcaption class="cap">兩條都從開工算到交給生產，比的是長度。Palm V 依個案日期推算（1996 年底到 1998 年秋），Visor 用個案寫的約 10 個月。</figcaption>
+</figure>
+<div class="tw"><table>
+<thead><tr><th>比一比</th><th>Palm V</th><th>Visor</th></tr></thead>
+<tbody>
+<tr><th>定位</th><td>高價、精品感</td><td>便宜，讓新標準快速普及</td></tr>
+<tr><th>價格</th><td>450 美元</td><td>150 美元</td></tr>
+<tr><th>外殼、電池</th><td>陽極氧化鋁、鋰電池</td><td>塑膠、AAA 電池</td></tr>
+<tr><th>使用者研究</th><td>自己買機器發給大家用，再收回饋</td><td>Handspring 認為幾乎不需要</td></tr>
+</tbody></table></div>
+<p class="read"><span>要讀</span><span class="pg"><b>p.1</b> 開頭故事</span><span class="pg"><b>p.8–9</b> Palm 背景，快速掃過</span><span class="pg"><b>p.11–13</b> Handspring，重點</span><span class="pg"><b>p.14</b> Exhibit 1 時間軸</span></p>
+</div>
+</section>
+
+<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>芊交棒給筱于：</b>在回答要不要接之前，先看 IDEO 到底強在哪裡。</p></div>
+
+<section class="stage yu" id="s2" style="padding-top:14px">
+<div class="shead"><h2>第 2 段｜Q5：IDEO 是什麼樣的公司？</h2><span class="by">筱于｜P4–P6</span></div>
+<div class="sbody">
+<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>IDEO 的強項來自一整套做法，而這套做法需要時間</p></div>
+<ol class="slides">
+<li><span class="pno">P4</span><div><h3>四個面向總覽</h3><p>一張關係圖，畫出流程、組織、文化、管理怎麼互相支撐</p></div></li>
+<li><span class="pno">P5</span><div><h3>用 Palm V 走一次</h3><p>時間軸標出各 Phase，放上原型照片，示範這套做法實際怎麼運作</p></div></li>
+<li><span class="pno">P6</span><div><h3>這套做法成立的條件</h3><p>前期探索和試錯都要時間，最後一句帶到 Visor</p></div></li>
+</ol>
+<p class="label">P4 的內容素材</p>
+<div class="facets">
+<div class="facet"><b>流程</b><span>Phase 0–IV、快速做原型、腦力激盪</span></div>
+<div class="facet"><b>組織</b><span>很扁平、專案制、維持小工作室</span></div>
+<div class="facet"><b>文化</b><span>鼓勵試錯、愛玩、好點子不分職位</span></div>
+<div class="facet"><b>管理</b><span>同儕評估、常跟客戶開會、控制超支</span></div>
+</div>
+<p class="read"><span>要讀</span><span class="pg"><b>p.2–3</b> 公司背景，快速掃過</span><span class="pg"><b>p.4–8</b> 文化、組織、流程，重點</span><span class="pg"><b>p.10–11</b> Palm V 實例</span><span class="pg"><b>Ex.3、5、6</b> 流程和原型照片</span></p>
+</div>
+</section>
+
+<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>筱于交棒給芊：</b>這套做法要有時間試錯，但 Visor 給的時間不到一半。</p></div>
+
+<section class="stage qian" id="s3" style="padding-top:14px">
+<div class="shead"><h2>第 3 段｜Q6：該接受這個時程嗎？</h2><span class="by">芊｜P7–P8</span></div>
+<div class="sbody">
+<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>接受的好處很實在，但照原條件接，代價就是 IDEO 的招牌</p></div>
+<ol class="slides">
+<li><span class="pno">P7</span><div><h3>接受的理由和代價</h3><p>做成左右對照的天秤，兩邊都從個案舉例</p></div></li>
+<li><span class="pno">P8</span><div><h3>Q6 的回答 <span class="tent">暫定</span></h3><p>值得接，但不應該照原條件接</p></div></li>
+</ol>
+<p class="label">P7 的內容素材</p>
+<div class="scale">
+<div class="side"><b>接受的理由</b><ul><li>雙方合作過，默契好</li><li>Springboard 是全新的機會</li><li>IDEO 有能力趕上困難的期限</li></ul></div>
+<div class="side"><b>接受的代價</b><ul><li>前期探索被壓縮</li><li>只能用成熟技術，設計要妥協</li><li>要對公司同事保密，相處尷尬</li></ul></div>
+</div>
+<p class="read"><span>要讀</span><span class="pg"><b>p.12–13</b> 時程、成本和 Boyle 的顧慮</span></p>
+</div>
+</section>
+
+<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>芊交棒給美樂蒂：</b>照原條件接的代價不小，那還有其他路嗎？</p></div>
+
+<section class="stage mel" id="s4" style="padding-top:14px">
+<div class="shead"><h2>第 4 段｜Q7：要說服對方，還是婉拒？</h2><span class="by">美樂蒂｜P9–P10</span></div>
+<div class="sbody">
+<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>單純延後或直接婉拒，都有一方會受傷，所以要談的是條件</p></div>
+<ol class="slides">
+<li><span class="pno">P9</span><div><h3>三條路，兩邊看</h3><p>用下面的表格比較，老師要求同時考慮 IDEO 和 Handspring</p></div></li>
+<li><span class="pno">P10</span><div><h3>Q7 的回答 <span class="tent">暫定</span></h3><p>不婉拒，也不只是要求延期，而是找雙方都能接受的做法</p></div></li>
+</ol>
+<p class="label">P9 的表格草稿，可以再改</p>
+<div class="tw"><table>
+<thead><tr><th>選項</th><th>對 IDEO</th><th>對 Handspring</th></tr></thead>
+<tbody>
+<tr><th>接受</th><td>留住客戶，但創新招牌打折</td><td>趕上 1999 年底檔期，設計較保守</td></tr>
+<tr><th>說服延後</th><td>能走完流程，做出更好的產品</td><td>錯過檔期，新標準較晚普及</td></tr>
+<tr><th>婉拒</th><td>保住流程、改接候補客戶，但可能傷到關係</td><td>要另找設計夥伴，時程更緊</td></tr>
+</tbody></table></div>
+<p class="read"><span>要讀</span><span class="pg"><b>p.11–13</b> 決策情境，重點</span><span class="pg"><b>全案</b> 整體看過一次</span></p>
+</div>
+</section>
+
+<div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>美樂蒂接著講：</b>那具體要怎麼談？</p></div>
+
+<section class="stage mel" id="s5" style="padding-top:14px">
+<div class="shead"><h2>第 5 段｜結論：我們的建議</h2><span class="by">美樂蒂｜P11–P12</span></div>
+<div class="sbody">
+<div class="keep" style="margin-top:0"><small>這段結束時，台下要知道</small><p>有條件接案，讓流程跟著專案調整 <span class="tent">暫定</span></p></div>
+<ol class="slides">
+<li><span class="pno">P11</span><div><h3>最終建議</h3><p>說清楚三件具體要談的事，以及為什麼雙方都能接受</p></div></li>
+<li><span class="pno">P12</span><div><h3>連回課堂、收尾</h3><p>一句話連回 Cooper（2008）的可調式 Stage-Gate：專案不同，流程也可以調整</p></div></li>
+</ol>
+<p class="label">P11 的內容素材</p>
+<ol class="reco">
+<li>答應 Handspring 的檔期</li>
+<li>保留精簡版的前期探索</li>
+<li>鎖定產品範圍，把設計重點放在 Springboard</li>
+</ol>
+<p class="read"><span>要讀</span><span class="pg"><b>Reading 8-1</b> 可調式 Stage-Gate</span></p>
+</div>
+</section>
+
+<section class="final" id="todo">
+<h2>開始做之前先確認</h2>
+<ul class="check">
+<li><span>先一起定結論。Q6、Q7 和結論都標了暫定，三段要站同一邊，所以這件事最優先</span></li>
+<li><span>看報告規格：總時間多長、Exercise 8 的 QFD 要不要一起報。這份分工先假設只報 Q5–Q7</span></li>
+<li><span>決定投影片由誰整合，以及各段的交件時間</span></li>
+</ul>
+</section>
+
+</main>
+<footer>個案來源：Thomke &amp; Nimgade，IDEO，HBS 9-600-143（2017 修訂版）。頁碼依這份 PDF。</footer>
+</div>
+
+</body>
+</html>
