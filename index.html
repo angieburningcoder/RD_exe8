@@ -87,6 +87,8 @@ tbody th{font-weight:700}tr:last-child th,tr:last-child td{border-bottom:0}
 .pass{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 10px;align-items:center;margin:14px 0 0 12px;font-size:14.5px;color:var(--muted)}
 .pass svg{display:block;width:18px;height:36px}.pass b{color:var(--ink)}
 .en{font-size:14.5px;font-style:italic;color:var(--muted);margin-top:10px}
+.refs{margin-top:16px;padding:10px 14px;background:var(--solid);border:1px solid var(--line);border-radius:8px;font-size:13.5px}
+.refs p{font-weight:700;color:var(--muted);margin-bottom:4px}.refs ul{padding-left:18px;list-style:disc}.refs li{margin:2px 0;line-height:1.55}.refs a{color:var(--accent)}
 .final{padding-block:40px 0}
 .check li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:10px;align-items:baseline}
 .check li:last-child{border-bottom:0}.check li::before{content:"";flex:none;width:12px;height:12px;border:1.5px solid var(--accent);border-radius:3px;transform:translateY(1px)}
@@ -173,6 +175,12 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <li><span class="pno">P1</span><div><h3><span class="min">1 分鐘</span>Lean3 是什麼、為什麼用 QFD</h3><p>產品介紹加核心問題，上面的五個規格可以直接用</p></div></li>
 <li><span class="pno">P2</span><div><h3><span class="min">2 分鐘</span>品質屋五大部分</h3><p>放品質屋圖，每一塊用一句話說明，也順便預告接下來的順序</p></div></li>
 </ol>
+<div class="refs"><p>本段參考資料</p><ul>
+<li><a href="https://hbr.org/1988/05/the-house-of-quality">Hauser &amp; Clausing（1988），The House of Quality，Harvard Business Review</a></li>
+<li><a href="https://qfdi.org/house-of-quality">QFD Institute：What is House of Quality</a></li>
+<li><a href="https://www.quality.org/system/files/house_of_quality.pdf">quality.org：House of Quality 各區塊圖解（PDF）</a></li>
+<li><a href="https://www.ubergizmo.com/japan-pr/lean-mobility-launches-innovative-urban-ev-lean3-with-global-ambitions">Lean Mobility 新聞稿：Lean3 與 Active Lean（2024/4/22）</a></li>
+</ul></div>
 </div>
 </section>
 
@@ -188,6 +196,11 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <div class="tw"><table><thead><tr><th>顧客需求</th><th>重要性</th><th>理由</th></tr></thead><tbody><tr><th>D1 安全與轉彎穩定</th><td class="nw"><span class="pips" aria-label="重要性 5 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span> 5</td><td>三輪窄車體要確保轉彎安全</td></tr><tr><th>D2 遮風避雨與舒適</th><td class="nw"><span class="pips" aria-label="重要性 5 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span> 5</td><td>解決機車怕日曬雨淋</td></tr><tr><th>D3 都市靈活與停車便利</th><td class="nw"><span class="pips" aria-label="重要性 5 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span> 5</td><td>符合都市微型移動定位</td></tr><tr><th>D4 價格可負擔</th><td class="nw"><span class="pips" aria-label="重要性 4 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span> 4</td><td>和一般機車有明顯價差</td></tr><tr><th>D5 足夠的續航</th><td class="nw"><span class="pips" aria-label="重要性 4 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span> 4</td><td>滿足每日通勤與短途</td></tr><tr><th>D6 充電便利</th><td class="nw"><span class="pips" aria-label="重要性 3 分"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span> 3</td><td>降低電動車使用門檻</td></tr><tr><th>D7 雙人乘坐與實用</th><td class="nw"><span class="pips" aria-label="重要性 4 分"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span> 4</td><td>載人、接送與日常需求</td></tr></tbody></table></div>
 <p class="label">P4 的內容素材</p>
 <div class="tw"><table><thead><tr><th>代碼</th><th>技術特性</th><th>怎麼衡量</th></tr></thead><tbody><tr><th>T1</th><td>主動傾斜與穩定控制</td><td>車身傾角、控制反應</td></tr><tr><th>T2</th><td>車身尺寸與轉向設計</td><td>車寬、迴轉半徑</td></tr><tr><th>T3</th><td>車體結構與安全防護</td><td>結構強度、安全測試</td></tr><tr><th>T4</th><td>電池與能源效率</td><td>電池容量、實際續航</td></tr><tr><th>T5</th><td>充電系統</td><td>充電時間、效率</td></tr><tr><th>T6</th><td>車艙空調與舒適系統</td><td>溫控能力、空調耗能</td></tr><tr><th>T7</th><td>量產與成本工程</td><td>製造成本、零件數</td></tr></tbody></table></div>
+<div class="refs"><p>本段參考資料</p><ul>
+<li><a href="https://www.7car.tw/articles/read/116128">7Car：Lean3 試駕，含 Active Lean、鋼製車體與沖壓焊接工法（2026/4/13）</a></li>
+<li><a href="https://cars.tvbs.com.tw/car-news/221307">TVBS 車勢：Lean3 規格與中華汽車組裝合作（2024/11/4）</a></li>
+<li><a href="https://www.bnext.com.tw/article/90012/2026-lean-mobility">數位時代：駕艙機車懶人包，可用來定義使用情境（2026/8/31）</a></li>
+</ul></div>
 </div>
 </section>
 <div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>羽芊交棒給小魚：</b>需求和技術都列好了，接著看 Lean3 跟對手比起來站在哪裡。</p></div>
@@ -204,14 +217,21 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <p class="label">P5 的比較圖</p>
 <div class="mts"><div class="mt"><p class="mt-t">車寬<span>越窄越靈活</span></p><div class="mr me"><span class="nm">Lean3</span><span class="tr"><span class="fill" style="width:69.8%"></span></span><span class="vl">970 mm</span></div><div class="mr"><span class="nm">C+pod</span><span class="tr"><span class="fill" style="width:92.8%"></span></span><span class="vl">1,290 mm</span></div><div class="mr"><span class="nm">Ami</span><span class="tr"><span class="fill" style="width:100.0%"></span></span><span class="vl">1,390 mm</span></div></div><div class="mt"><p class="mt-t">最高時速<span>越高越好</span></p><div class="mr me"><span class="nm">Lean3</span><span class="tr"><span class="fill" style="width:100.0%"></span></span><span class="vl">80 km/h</span></div><div class="mr"><span class="nm">C+pod</span><span class="tr"><span class="fill" style="width:75.0%"></span></span><span class="vl">60 km/h</span></div><div class="mr"><span class="nm">Ami</span><span class="tr"><span class="fill" style="width:56.2%"></span></span><span class="vl">45 km/h</span></div></div><div class="mt"><p class="mt-t">續航<span>測試方式不同，僅供參考</span></p><div class="mr"><span class="nm">C+pod</span><span class="tr"><span class="fill" style="width:100.0%"></span></span><span class="vl">150 km</span></div><div class="mr me"><span class="nm">Lean3</span><span class="tr"><span class="fill" style="width:66.7%"></span></span><span class="vl">100 km</span></div><div class="mr"><span class="nm">Ami</span><span class="tr"><span class="fill" style="width:50.0%"></span></span><span class="vl">75 km</span></div></div></div>
 <div class="tw" style="margin-top:10px"><table><thead><tr><th>其他項目</th><th>Lean3</th><th>Citroën Ami</th><th>Toyota C+pod</th></tr></thead><tbody>
-<tr><th>電池</th><td>8.1 kWh</td><td>約 5.4 kWh</td><td>9.06 kWh</td></tr>
+<tr><th>電池</th><td>8.1 kWh</td><td>5.4 kWh（可用）</td><td>9.06 kWh</td></tr>
 <tr><th>標準充電</th><td>220V 約 5 h</td><td>約 4 h</td><td>200V 約 5 h</td></tr>
 <tr><th>主動傾斜</th><td>有</td><td>無</td><td>無</td></tr>
-<tr><th>備註</th><td>台灣預購</td><td>歐洲城市微型車</td><td>已停產，當歷史標竿</td></tr>
+<tr><th>備註</th><td>台灣預訂，個人版預計 2027 Q1 交車</td><td>歐洲城市微型車</td><td>已停產，當歷史標竿</td></tr>
 </tbody></table></div>
 <p class="label">P7 的屋頂圖：兩項技術的交會格就是它們的關係</p>
 <div class="roof"><svg viewBox="0 0 480 254" role="img" aria-label="品質屋屋頂：T1 與 T2 正相關；T1 與 T7、T3 與 T4、T3 與 T7、T4 與 T5、T4 與 T6、T6 與 T7 負相關"><path d="M90 166L119 195L90 224L61 195Z" fill="var(--accent)" fill-opacity=".22" stroke="var(--line)"/><text x="90" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">+</text><path d="M120 136L149 165L120 194L91 165Z" fill="none" stroke="var(--line)"/><path d="M150 106L179 135L150 164L121 135Z" fill="none" stroke="var(--line)"/><path d="M180 76L209 105L180 134L151 105Z" fill="none" stroke="var(--line)"/><path d="M210 46L239 75L210 104L181 75Z" fill="none" stroke="var(--line)"/><path d="M240 16L269 45L240 74L211 45Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="240" y="51" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M150 166L179 195L150 224L121 195Z" fill="none" stroke="var(--line)"/><path d="M180 136L209 165L180 194L151 165Z" fill="none" stroke="var(--line)"/><path d="M210 106L239 135L210 164L181 135Z" fill="none" stroke="var(--line)"/><path d="M240 76L269 105L240 134L211 105Z" fill="none" stroke="var(--line)"/><path d="M270 46L299 75L270 104L241 75Z" fill="none" stroke="var(--line)"/><path d="M210 166L239 195L210 224L181 195Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="210" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M240 136L269 165L240 194L211 165Z" fill="none" stroke="var(--line)"/><path d="M270 106L299 135L270 164L241 135Z" fill="none" stroke="var(--line)"/><path d="M300 76L329 105L300 134L271 105Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="300" y="111" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M270 166L299 195L270 224L241 195Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="270" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M300 136L329 165L300 194L271 165Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="300" y="171" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M330 106L359 135L330 164L301 135Z" fill="none" stroke="var(--line)"/><path d="M330 166L359 195L330 224L301 195Z" fill="none" stroke="var(--line)"/><path d="M360 136L389 165L360 194L331 165Z" fill="none" stroke="var(--line)"/><path d="M390 166L419 195L390 224L361 195Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="390" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><text x="60" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T1 傾斜</text><text x="120" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T2 車身</text><text x="180" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T3 安全</text><text x="240" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T4 電池</text><text x="300" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T5 充電</text><text x="360" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T6 空調</text><text x="420" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T7 成本</text></svg></div>
 <p class="key"><span><b>＋</b> 正相關，互相幫忙</span><span><b>−</b> 負相關，要做取捨</span><span>空白：無明顯關係</span></p>
+<div class="refs"><p>本段參考資料</p><ul>
+<li><a href="https://www.citroen.co.uk/ami">Citroën UK 官網：Ami 規格與充電時間</a></li>
+<li><a href="https://www.autoexpress.co.uk/citroen/ami/prices-specs/108692/6kw-ami-5.4kwh-2dr-auto">Auto Express：Ami 電池總容量 5.5 kWh、可用 5.4 kWh</a></li>
+<li><a href="https://global.toyota/en/newsroom/toyota/34464305.html">Toyota 新聞稿：C+pod 規格與充電時間</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Toyota_C%2Bpod">Wikipedia：Toyota C+pod 停產時間</a></li>
+<li><a href="https://www.quality.org/system/files/house_of_quality.pdf">quality.org：屋頂矩陣說明（PDF）</a></li>
+</ul></div>
 </div>
 </section>
 <div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>小魚交棒給宛云：</b>技術會互相牽制，不可能全部都做到最好，所以要算分數排順序。</p></div>
@@ -231,6 +251,10 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <ol class="rank"><li title="T3 車體安全：Absolute 117，Relative 20.2%"><span class="rk">1</span><span class="nm">T3 車體安全</span><span class="tr"><span class="fill top" style="width:100.0%"></span></span><span class="vl">117｜20.2%</span></li><li title="T1 傾斜控制：Absolute 102，Relative 17.6%"><span class="rk">2</span><span class="nm">T1 傾斜控制</span><span class="tr"><span class="fill top" style="width:87.1%"></span></span><span class="vl">102｜17.6%</span></li><li title="T2 車身轉向：Absolute 86，Relative 14.8%"><span class="rk">3</span><span class="nm">T2 車身轉向</span><span class="tr"><span class="fill" style="width:73.3%"></span></span><span class="vl">86｜14.8%</span></li><li title="T6 空調舒適：Absolute 86，Relative 14.8%"><span class="rk">3</span><span class="nm">T6 空調舒適</span><span class="tr"><span class="fill" style="width:73.3%"></span></span><span class="vl">86｜14.8%</span></li><li title="T7 成本工程：Absolute 80，Relative 13.8%"><span class="rk">5</span><span class="nm">T7 成本工程</span><span class="tr"><span class="fill" style="width:68.3%"></span></span><span class="vl">80｜13.8%</span></li><li title="T4 電池效率：Absolute 66，Relative 11.4%"><span class="rk">6</span><span class="nm">T4 電池效率</span><span class="tr"><span class="fill" style="width:56.4%"></span></span><span class="vl">66｜11.4%</span></li><li title="T5 充電系統：Absolute 43，Relative 7.4%"><span class="rk">7</span><span class="nm">T5 充電系統</span><span class="tr"><span class="fill" style="width:36.6%"></span></span><span class="vl">43｜7.4%</span></li></ol>
 <p class="formula">Absolute：各需求的「重要性 × 關聯分數」加總。T1 = 5×9 + 5×0 + 5×9 + 4×1 + 4×1 + 3×0 + 4×1 = 102</p>
 <p class="formula">Relative：該技術的 Absolute ÷ 全部總和。T3 = 117 ÷ 580 = 20.2%</p>
+<div class="refs"><p>本段參考資料</p><ul>
+<li><a href="https://link.springer.com/article/10.1007/s00163-007-0029-7">van de Poel（2007），Methodological problems in QFD，Research in Engineering Design 18：9-3-1 量尺、加權公式與量尺的限制</a></li>
+<li><a href="https://doi.org/10.1002/qre.819">Lai, Tan &amp; Xie（2007），Reading 8-2：量化 QFD 的個人電腦設計案例</a></li>
+</ul></div>
 </div>
 </section>
 <div class="pass"><svg viewBox="0 0 18 36" aria-hidden="true"><path d="M9 2V32M3 25l6 7 6-7" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>宛云接著講：</b>分數算出來了，怎麼變成設計規格？</p></div>
@@ -255,6 +279,11 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 </tbody></table></div>
 <p class="label">P11 可以用的英文結論</p>
 <p class="en">Based on the QFD analysis, vehicle safety and active lean control are Lean3's top technical priorities, followed by compact vehicle design and cabin comfort. Future R&amp;D should strengthen safety and driving stability while balancing comfort, energy efficiency, and production cost.</p>
+<div class="refs"><p>本段參考資料</p><ul>
+<li><a href="https://www.mirrormedia.mg/story/amp/20260508-car-testdrive-lean3">鏡週刊：Lean3 試駕，含價格、電池、充電與配備（2026/5/8）</a></li>
+<li><a href="https://www.bnext.com.tw/article/90012/2026-lean-mobility">數位時代：前後碟煞、預訂與交車時程（2026/8/31）</a></li>
+<li><a href="https://www.7car.tw/articles/read/116128">7Car：最小迴轉半徑 3.6 m（2026/4/13）</a></li>
+</ul></div>
 </div>
 </section>
 
@@ -264,14 +293,26 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <li><span><strong>全組確認矩陣分數。</strong>第一名很敏感：D1×T3 或 D7×T3 任一格從 9 改成 3，T3 就會掉到 87 或 93，第一名變成 T1。特別是 D7 雙人實用和車體安全，要講得出為什麼是強相關</span></li>
 <li><span><strong>問元杰有沒有指定格式。</strong>上課如果有品質屋範例或 Excel 模板，五大部分和計分方式以那個版本為準</span></li>
 <li><span><strong>標清楚資料性質。</strong>重要性和矩陣分數要寫「研究小組評估」，不是顧客調查或 Lean Mobility 官方資料</span></li>
-<li><span><strong>核對還沒確認的數字。</strong>迴轉半徑 3.6 m、Ami 約 4 小時和 C+pod 約 5 小時的充電時間，我還沒查到可確認的來源，放上投影片前要對官方頁面。Ami 的電池有 5.4 和 5.5 kWh 兩種寫法，記得註明來源</span></li>
-<li><span><strong>先不要主打好停車。</strong>媒體提到汽車格和機車格都能停，但車寬停機車格可能有問題，P6 只講車窄的靈活優勢</span></li>
+<li><span><strong>開一次 Lean3 官方車輛頁。</strong>文件的規格已用媒體報導核對，官方頁請用自己的瀏覽器再看一次，量產版數字可能調整</span></li>
+<li><span><strong>先不要主打好停車。</strong>駕艙機車可停小型車格，機車格由各縣市決定，P6 只講車窄的靈活優勢</span></li>
 <li><span><strong>11/18 前各自交給旻泓</strong>（建議），留一天整合，11/19 由旻泓繳交簡報</span></li>
 </ul>
 </section>
 
+<section class="final" id="refs">
+<h2>共用資料來源</h2>
+<p class="lead">多段都會用到的來源放這裡，各段專用的列在該段下方。除了 Lean3 官方車輛頁，其他頁面都已實際查證。</p>
+<div class="refs"><ul>
+<li><a href="https://lean3.leanmobility.net/car.php">Lean Mobility：Lean3 官方車輛頁</a>（組內文件的規格來源，我這邊無法開啟）</li>
+<li><a href="https://hbr.org/1988/05/the-house-of-quality">Hauser &amp; Clausing（1988），The House of Quality：品質屋的經典文章</a></li>
+<li><a href="https://www.bnext.com.tw/article/90012/2026-lean-mobility">數位時代：駕艙機車法規、停車、售價與交車時程（2026/8/31）</a></li>
+<li><a href="https://www.mirrormedia.mg/story/amp/20260508-car-testdrive-lean3">鏡週刊：Lean3 試駕與主要規格（2026/5/8）</a></li>
+<li><a href="https://www.7car.tw/articles/read/116128">7Car：Lean3 試駕與車體工法（2026/4/13）</a></li>
+</ul></div>
+</section>
+
 </main>
-<footer>內容依組內文件「rd excerise8 駕艙機車」整理。Lean3 規格核對：<a href="https://www.mirrormedia.mg/story/amp/20260508-car-testdrive-lean3">鏡週刊試駕</a>；法規與停車：<a href="https://www.nownews.com/news/6784210">NOWnews</a>；競品：<a href="https://en.wikipedia.org/wiki/Toyota_C%2Bpod">Toyota C+pod</a>、<a href="https://www.auto-data.net/en/citroen-ami-electric-5.5-kwh-8hp-39251">Citroën Ami</a>。</footer>
+<footer>內容依組內文件「rd excerise8 駕艙機車」整理。重要性、矩陣分數和屋頂關係都是小組評估。</footer>
 </div>
 
 </body>
