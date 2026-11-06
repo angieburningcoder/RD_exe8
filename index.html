@@ -12,14 +12,14 @@
 <style>
 /* Layout: 單欄長頁，從頭到尾照報告順序走；頂端色條同時是導覽。字體沿用可樂頁，底色沿用微軟 proposal 封面的淡紫漸層 */
 :root{
---g1:#E1D9F6;--g2:#F2F0FB;--g3:#FAFAFD;--nav:#F2F0FB;--panel:rgba(255,255,255,.72);--solid:#FFFFFF;
+--g1:#DCD2F5;--g2:#F1EEFB;--g3:#FBFAFE;--g4:#DCE4F8;--nav:rgba(244,241,252,.74);--panel:rgba(255,255,255,.55);--solid:rgba(255,255,255,.62);
 --ink:#1C1F4A;--muted:#4A4E6E;--faint:#6B6E8E;--line:#DAD6EE;--accent:#3E4BB5;--hot:#B4560F;--on:#FFFFFF;
---qian:#A8478C;--qian-t:#F6E4F1;--yu:#14788A;--yu-t:#D9EEF2;--mel:#3E4BB5;--mel-t:#E2E4F8;
+--qian:#A8478C;--qian-t:rgba(168,71,140,.09);--qian-b:rgba(168,71,140,.17);--yu:#14788A;--yu-t:rgba(20,120,138,.09);--yu-b:rgba(20,120,138,.17);--mel:#3E4BB5;--mel-t:rgba(62,75,181,.09);--mel-b:rgba(62,75,181,.16);
 --display:"Noto Serif TC",serif;--body:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g1:#2E2852;--g2:#1E1B38;--g3:#16152B;--nav:#1E1B38;--panel:rgba(255,255,255,.055);--solid:#25224A;--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--on:#16152B;--qian:#E79BD0;--qian-t:#472A45;--yu:#6FCEDD;--yu-t:#1D3F49;--mel:#A9B2F5;--mel-t:#2F3160;color-scheme:dark}}
-:root[data-theme="dark"]{--g1:#2E2852;--g2:#1E1B38;--g3:#16152B;--nav:#1E1B38;--panel:rgba(255,255,255,.055);--solid:#25224A;--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--on:#16152B;--qian:#E79BD0;--qian-t:#472A45;--yu:#6FCEDD;--yu-t:#1D3F49;--mel:#A9B2F5;--mel-t:#2F3160;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g1:#352C5E;--g2:#1F1C3A;--g3:#15142A;--g4:#1F2A4E;--nav:rgba(30,27,56,.76);--panel:rgba(255,255,255,.055);--solid:rgba(255,255,255,.07);--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--on:#16152B;--qian:#E79BD0;--qian-t:rgba(231,155,208,.11);--qian-b:rgba(231,155,208,.2);--yu:#6FCEDD;--yu-t:rgba(111,206,221,.1);--yu-b:rgba(111,206,221,.19);--mel:#A9B2F5;--mel-t:rgba(169,178,245,.11);--mel-b:rgba(169,178,245,.2);color-scheme:dark}}
+:root[data-theme="dark"]{--g1:#352C5E;--g2:#1F1C3A;--g3:#15142A;--g4:#1F2A4E;--nav:rgba(30,27,56,.76);--panel:rgba(255,255,255,.055);--solid:rgba(255,255,255,.07);--ink:#EDECF8;--muted:#BDBCD8;--faint:#9C9BBC;--line:#3D3A62;--accent:#A9B2F5;--hot:#EDA868;--on:#16152B;--qian:#E79BD0;--qian-t:rgba(231,155,208,.11);--qian-b:rgba(231,155,208,.2);--yu:#6FCEDD;--yu-t:rgba(111,206,221,.1);--yu-b:rgba(111,206,221,.19);--mel:#A9B2F5;--mel-t:rgba(169,178,245,.11);--mel-b:rgba(169,178,245,.2);color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--g2);background-image:radial-gradient(ellipse at 88% 100%,var(--g1) 0%,var(--g2) 48%,var(--g3) 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75}
+body{margin:0;background:var(--g2);background-image:radial-gradient(ellipse at 100% 30%,var(--g4) 0%,transparent 45%),radial-gradient(ellipse at 0% 70%,var(--g1) 0%,transparent 50%),linear-gradient(165deg,var(--g3) 0%,var(--g2) 35%,var(--g1) 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--nav)}
 .wrap{max-width:880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
 p{margin:0}ul,ol{margin:0;padding:0;list-style:none}strong{color:var(--accent)}a{color:inherit}
@@ -30,12 +30,12 @@ p{margin:0}ul,ol{margin:0;padding:0;list-style:none}strong{color:var(--accent)}a
 h1{font-family:var(--display);font-size:clamp(26px,4.6vw,40px);line-height:1.3;margin:0 0 10px;text-wrap:balance}
 .meta{color:var(--muted);font-size:15px;max-width:38em}
 
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--nav);border-block:1px solid var(--line)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--nav);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-block:1px solid var(--line)}
 .flow{display:flex;gap:3px;padding-block:8px}
 .flow li{min-width:0}
-.flow a{display:block;padding:6px 8px;text-decoration:none;color:var(--on);border-radius:4px;line-height:1.3}
+.flow a{display:block;padding:6px 8px;text-decoration:none;color:var(--ink);border-radius:6px;line-height:1.3}
 .flow b{display:block;font-size:14px}.flow span{display:block;font-size:12px}
-.f-q a{background:var(--qian)}.f-y a{background:var(--yu)}.f-m a{background:var(--mel)}
+.f-q a{background:var(--qian-b)}.f-y a{background:var(--yu-b)}.f-m a{background:var(--mel-b)}
 .flow a:hover b{text-decoration:underline}
 
 h2{font-family:var(--display);font-size:clamp(20px,3vw,26px);line-height:1.4;margin:0 0 12px;text-wrap:balance}
@@ -48,7 +48,7 @@ h2{font-family:var(--display);font-size:clamp(20px,3vw,26px);line-height:1.4;mar
 .tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin-top:14px}
 .tl li{background:var(--panel);padding:8px 10px;min-width:0;font-size:13.5px;line-height:1.5}
 .tl b{display:block;font-size:14px;color:var(--accent);font-variant-numeric:tabular-nums}
-.tl li.now{background:var(--accent);color:var(--on)}.tl li.now b{color:var(--on)}
+.tl li.now{background:var(--mel-b)}
 .qs{margin-top:14px}.qs li{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:0 12px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6}
 .qs li:last-child{border-bottom:0}.qs .q{font-weight:700;color:var(--c)}.qs a{font-size:13.5px;color:var(--c);white-space:nowrap}
 table{width:100%;min-width:560px;border-collapse:collapse;background:var(--panel);font-size:14.5px;line-height:1.55}
@@ -59,10 +59,10 @@ tbody th{font-weight:700;white-space:nowrap}tr:last-child th,tr:last-child td{bo
 td a{color:var(--c);font-weight:500}.nw{white-space:nowrap}
 .pp{font-variant-numeric:tabular-nums}
 
-.qian{--c:var(--qian);--t:var(--qian-t)}.yu{--c:var(--yu);--t:var(--yu-t)}.mel{--c:var(--mel);--t:var(--mel-t)}
+.qian{--c:var(--qian);--t:var(--qian-t);--b:var(--qian-b)}.yu{--c:var(--yu);--t:var(--yu-t);--b:var(--yu-b)}.mel{--c:var(--mel);--t:var(--mel-t);--b:var(--mel-b)}
 
 .stage{padding-top:34px;scroll-margin-top:70px}
-.shead{background:var(--c);color:var(--on);border-radius:10px 10px 0 0;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
+.shead{background:var(--b);color:var(--ink);border-radius:10px 10px 0 0;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
 .shead h2{font-size:clamp(19px,2.8vw,23px);margin:0;color:inherit}
 .shead .by{font-size:14px;margin-left:auto;font-weight:500}
 .sbody{background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;padding:14px 16px 16px}
@@ -192,7 +192,7 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}
 <article class="panel">
 <svg viewBox="0 0 220 104" role="img" aria-label="1995 到 1998 年設計獎項：IDEO 32 座，ZIBA 20 座，Fitch 18 座">
 <g font-size="12" fill="var(--ink)"><text x="0" y="28">IDEO</text><text x="0" y="58">ZIBA</text><text x="0" y="88">Fitch</text></g>
-<rect x="42" y="16" width="144" height="16" fill="var(--accent)"/><rect x="42" y="46" width="90" height="16" fill="var(--faint)" fill-opacity=".5"/><rect x="42" y="76" width="81" height="16" fill="var(--faint)" fill-opacity=".5"/>
+<rect x="42" y="16" width="144" height="16" fill="var(--accent)" fill-opacity=".5"/><rect x="42" y="46" width="90" height="16" fill="var(--faint)" fill-opacity=".3"/><rect x="42" y="76" width="81" height="16" fill="var(--faint)" fill-opacity=".3"/>
 <g font-size="13" font-weight="700" fill="var(--ink)"><text x="192" y="29">32</text><text x="138" y="59">20</text><text x="129" y="89">18</text></g>
 </svg>
 <h4>設計圈第一名</h4><p>IDEO 靠快速做原型和腦力激盪起家，1995–98 年得獎最多</p>
@@ -212,7 +212,7 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}
 <svg viewBox="0 0 220 104" role="img" aria-label="手持裝置背面有插槽，模組像遊戲卡帶一樣插入">
 <rect x="46" y="10" width="62" height="86" rx="6" fill="var(--solid)" stroke="var(--ink)" stroke-width="1.6"/>
 <rect x="56" y="48" width="42" height="36" rx="2" fill="none" stroke="var(--ink)" stroke-dasharray="4 3"/>
-<rect x="156" y="48" width="42" height="36" rx="3" fill="var(--accent)"/>
+<rect x="156" y="48" width="42" height="36" rx="3" fill="var(--accent)" fill-opacity=".4"/>
 <path d="M150 66H106M114 59l-9 7 9 7" fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="177" y="38" font-size="12" fill="var(--muted)" text-anchor="middle">擴充模組</text>
 </svg>
@@ -220,7 +220,7 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}
 </article>
 <article class="panel">
 <svg viewBox="0 0 220 104" role="img" aria-label="從 Boyle 分出三條路：接受、說服延後、婉拒">
-<circle cx="24" cy="52" r="11" fill="var(--accent)"/>
+<circle cx="24" cy="52" r="11" fill="var(--accent)" fill-opacity=".45"/>
 <g fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round"><path d="M35 52C70 52 70 18 106 18"/><path d="M35 52H106"/><path d="M35 52C70 52 70 86 106 86"/></g>
 <g font-size="13.5" fill="var(--ink)" font-weight="700"><text x="114" y="23">接受</text><text x="114" y="57">說服延後</text><text x="114" y="91">婉拒</text></g>
 </svg>
@@ -233,20 +233,20 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}
 <svg viewBox="0 0 720 180" role="img" aria-label="開發時間比較：Palm V 約 22 個月，Visor 約 10 個月，不到一半">
 <text x="16" y="16" font-size="13" font-weight="700" fill="var(--accent)">前期探索：IDEO 的招牌</text>
 <path d="M16 22V28H151V22" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
-<rect x="16" y="32" width="81" height="34" fill="var(--accent)"/>
-<rect x="98" y="32" width="53" height="34" fill="var(--accent)" fill-opacity=".78"/>
+<rect x="16" y="32" width="81" height="34" fill="var(--accent)" fill-opacity=".36"/>
+<rect x="98" y="32" width="53" height="34" fill="var(--accent)" fill-opacity=".25"/>
 <rect x="152" y="32" width="134" height="34" fill="var(--faint)" fill-opacity=".4"/>
 <rect x="287" y="32" width="323" height="34" fill="var(--faint)" fill-opacity=".25"/>
 <g font-size="12.5" text-anchor="middle">
-<text x="56" y="54" fill="var(--on)" font-weight="700">Phase 0</text>
-<text x="124" y="54" fill="var(--on)" font-weight="700">Phase I</text>
+<text x="56" y="54" fill="var(--ink)" font-weight="700">Phase 0</text>
+<text x="124" y="54" fill="var(--ink)" font-weight="700">Phase I</text>
 <text x="219" y="54" fill="var(--ink)">Phase II</text>
 <text x="448" y="54" fill="var(--ink)">Phase III–IV</text>
 </g>
 <text x="618" y="46" font-size="14" font-weight="700" fill="var(--ink)">Palm V</text>
 <text x="618" y="63" font-size="13" fill="var(--muted)">約 22 個月</text>
-<rect x="16" y="84" width="270" height="34" fill="var(--hot)"/>
-<text x="151" y="106" font-size="12.5" text-anchor="middle" fill="var(--on)" font-weight="700">前期探索要大幅壓縮</text>
+<rect x="16" y="84" width="270" height="34" fill="var(--hot)" fill-opacity=".24"/>
+<text x="151" y="106" font-size="12.5" text-anchor="middle" fill="var(--ink)" font-weight="700">前期探索要大幅壓縮</text>
 <text x="294" y="98" font-size="14" font-weight="700" fill="var(--ink)">Visor</text>
 <text x="294" y="115" font-size="13" fill="var(--muted)">約 10 個月</text>
 <line x1="16" x2="610" y1="136" y2="136" stroke="var(--faint)" stroke-width="1"/>
