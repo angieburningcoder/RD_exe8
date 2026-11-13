@@ -90,6 +90,13 @@ tbody th{font-weight:700}tr:last-child th,tr:last-child td{border-bottom:0}
 .refs{margin-top:16px;padding:10px 14px;background:var(--solid);border:1px solid var(--line);border-radius:8px;font-size:13.5px}
 .refs p{font-weight:700;color:var(--muted);margin-bottom:4px}.refs ul{padding-left:18px;list-style:disc}.refs li{margin:2px 0;line-height:1.55}.refs a{color:var(--accent)}
 .kw{color:var(--hot);font-weight:700;font-style:normal}.sub{font-family:var(--display);font-size:clamp(17px,2.4vw,20px);font-weight:700;margin:22px 0 4px}
+.conf{display:grid;gap:8px}.conf li{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:9px 14px;font-size:15px;line-height:1.6}
+.conf b{display:block;font-size:16px}.conf span{color:var(--muted)}
+.focus{background:var(--hot);background:rgba(180,86,15,.08);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:15px}
+.focus b{color:var(--hot)}
+.link{counter-reset:k;display:grid;gap:4px;margin-top:6px}.link li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:8px;align-items:baseline;font-size:15px;line-height:1.6;counter-increment:k;padding:6px 0;border-bottom:1px solid var(--line)}
+.link li:last-child{border-bottom:0}.link li::before{content:counter(k);font-weight:700;color:var(--accent);text-align:center;background:var(--mel-t);border-radius:4px}
+.link em{font-style:normal;font-weight:700}
 .final{padding-block:40px 0}
 .check li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:10px;align-items:baseline}
 .check li:last-child{border-bottom:0}.check li::before{content:"";flex:none;width:12px;height:12px;border:1.5px solid var(--accent);border-radius:3px;transform:translateY(1px)}
@@ -133,26 +140,38 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <p class="core"><small>核心問題</small>Lean3 應該把有限的研發資源，優先投入哪些技術，才能最有效滿足顧客需求？</p>
 </section>
 
+<section class="block" id="confirm">
+<h2>11/13 元杰確認的事</h2>
+<p class="lead">和老師討論後確定的方向，整份分工頁已照這些更新。</p>
+<ul class="conf">
+<li><b>品質屋講 7 部分</b><span>題目寫 five 是老師打錯，照講義圖的 1–7 講就好。</span></li>
+<li><b>屋頂要講正負含意</b><span>正相關是協同，改善一項會帶動另一項；負相關是衝突，代表設計要做取捨。</span></li>
+<li><b>需求、技術和權重可以自己定</b><span>由我們研究選定，但每個選擇都要說得出理由。</span></li>
+<li><b>七部分要環環相扣</b><span>不要分開介紹，要講清楚前一部分怎麼影響下一部分。</span></li>
+</ul>
+<p class="focus"><b>老師評分重點：</b>Absolute 數字有沒有算對、競品分析的結論和建議、權重代表什麼意思。</p>
+</section>
+
 <section class="block" id="req">
 <h2>元杰要我們講到的 8 點</h2>
 <p class="lead">這是整份報告的檢查表。橘色字是老師要的關鍵詞，投影片標題和口頭都直接用這些詞，每一點都要講到。</p>
 <div class="tw"><table>
 <thead><tr><th>#</th><th>老師的要求</th><th>誰</th><th>投影片</th><th>一定要講到</th></tr></thead>
 <tbody>
-<tr class="qian"><th>1</th><td>Explain <em class="kw">five</em> parts of <em class="kw">House of Quality</em> or <em class="kw">Quality Function Deployment</em></td><td class="nw"><span class="tag">羽芊</span></td><td class="pp nw">P2</td><td>五部分的名稱、位置、功用，以及對應的講義區塊</td></tr>
-<tr class="qian"><th>2</th><td>Explain the <em class="kw">demand</em> part</td><td class="nw"><span class="tag">羽芊</span></td><td class="pp nw">P3</td><td>7 項顧客需求和 1–5 分重要性</td></tr>
+<tr class="qian"><th>1</th><td>Explain <em class="kw">seven</em> parts of <em class="kw">House of Quality</em> or <em class="kw">Quality Function Deployment</em></td><td class="nw"><span class="tag">羽芊</span></td><td class="pp nw">P2</td><td>七部分的名稱、位置、功用，以及它們怎麼串起來（題目的 five 是筆誤）</td></tr>
+<tr class="qian"><th>2</th><td>Explain the <em class="kw">demand</em> part</td><td class="nw"><span class="tag">羽芊</span></td><td class="pp nw">P3</td><td>7 項顧客需求、1–5 分權重，以及權重代表的意思</td></tr>
 <tr class="qian"><th>3</th><td>Explain the <em class="kw">technology</em> part</td><td class="nw"><span class="tag">羽芊</span></td><td class="pp nw">P4</td><td>7 項技術和衡量方式</td></tr>
-<tr class="yu"><th>4</th><td>Explain the <em class="kw">industrial benchmarking</em> part</td><td class="nw"><span class="tag">小魚</span></td><td class="pp nw">P5–P6</td><td>顧客評分、技術比較、Lean3 的優勢和弱點</td></tr>
+<tr class="yu"><th>4</th><td>Explain the <em class="kw">industrial benchmarking</em> part</td><td class="nw"><span class="tag">小魚</span></td><td class="pp nw">P5–P6</td><td>顧客評分、技術比較、結論和研發建議</td></tr>
 <tr class="yu"><th>5</th><td>Explain the <em class="kw">roof of the House</em></td><td class="nw"><span class="tag">小魚</span></td><td class="pp nw">P7</td><td>技術之間的正負相關和取捨</td></tr>
-<tr class="mel"><th>6</th><td>Calculate the <em class="kw">absolute scores</em> of <em class="kw">demand-technology matrix</em></td><td class="nw"><span class="tag">宛云</span></td><td class="pp nw">P8–P9</td><td>矩陣、公式、T1 算例和 7 項分數</td></tr>
+<tr class="mel"><th>6</th><td>Calculate the <em class="kw">absolute scores</em> of <em class="kw">demand-technology matrix</em></td><td class="nw"><span class="tag">宛云</span></td><td class="pp nw">P8–P9</td><td>矩陣、公式、T1 算例和 7 項分數，數字要驗算</td></tr>
 <tr class="mel"><th>7</th><td>Calculate the <em class="kw">relative scores</em></td><td class="nw"><span class="tag">宛云</span></td><td class="pp nw">P9</td><td>百分比算法、T3 算例和排名</td></tr>
 <tr class="mel"><th>8</th><td>Provide the <em class="kw">main design specifications</em> of Lean 3 mobility</td><td class="nw"><span class="tag">宛云</span></td><td class="pp nw">P10–P11</td><td>區塊 6 Targets、研發建議和結論</td></tr>
 </tbody></table></div>
 </section>
 
 <section class="block" id="hoq">
-<h2>全組統一用元杰的品質屋</h2>
-<p class="lead">這版以元杰講義的 Example of QFD 為準。講義的區塊編號是 1–7，老師 8 點要講的五部分對應如下，三個人都用這張圖和這些名稱。</p>
+<h2>全組統一用元杰的 7 部分品質屋</h2>
+<p class="lead">照元杰講義的 Example of QFD 分成 7 部分，三個人都用這張圖和這些名稱。</p>
 <figure class="house">
 <svg viewBox="0 0 660 470" role="img" aria-label="元杰講義版品質屋：羽芊負責區塊 1 和 3，小魚負責區塊 2、5、7，宛云負責區塊 4、6 和最底部的 Technical importance">
 <g stroke="var(--line)" stroke-width="2">
@@ -166,7 +185,7 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <rect x="30" y="400" width="440" height="50" fill="var(--mel-b)"/>
 </g>
 <g font-size="15" font-weight="700" fill="var(--ink)" text-anchor="middle">
-<text x="330" y="70">5 Roof</text><text x="330" y="126">3 HOW Technical Requirements</text><text x="110" y="200">1 WHAT</text><text x="110" y="220">Customer</text><text x="110" y="240">Requirements</text><text x="330" y="224">4 Relationship Matrix</text><text x="550" y="204">2 Customer</text><text x="550" y="224">Competitive</text><text x="550" y="244">Evaluation</text><text x="250" y="322">6 HOW MUCH Targets</text><text x="250" y="372">7 Competitive Assessment</text><text x="250" y="422">Technical importance：Absolute、Relative</text>
+<text x="330" y="70">5 Roof</text><text x="330" y="126">3 HOW Technical Requirements</text><text x="110" y="200">1 WHAT</text><text x="110" y="220">Customer</text><text x="110" y="240">Requirements</text><text x="330" y="224">4 Relationship Matrix</text><text x="550" y="204">2 Customer</text><text x="550" y="224">Competitive</text><text x="550" y="244">Evaluation</text><text x="250" y="322">6 HOW MUCH Targets</text><text x="250" y="372">7 Competitive Assessment</text><text x="250" y="422">7 Importance：Absolute、Relative</text>
 </g>
 <g font-size="13" text-anchor="middle" fill="var(--muted)">
 <text x="330" y="88">Correlation Matrix</text><text x="330" y="146">Technology part</text><text x="110" y="262">Demand part</text><text x="110" y="280">含 2 Importance</text><text x="330" y="246">Demand-technology matrix</text><text x="550" y="268">Industrial benchmarking</text><text x="250" y="340">Main design specifications</text><text x="250" y="390">Industrial benchmarking</text><text x="250" y="440">要求 6、7 的計算結果</text>
@@ -176,34 +195,45 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 </g>
 </svg>
 </figure>
-<p class="cap">依元杰講義重畫，顏色代表負責人，數字是講義的區塊編號。</p>
+<p class="cap">依元杰講義重畫，顏色代表負責人，數字是七部分的編號。講義的第 7 部分包含技術比較和最底部的 Importance。</p>
 <div class="tw"><table>
-<thead><tr><th>老師要的內容</th><th>講義區塊</th><th>位置</th><th>Lean3 放什麼</th><th>誰講</th></tr></thead>
+<thead><tr><th>講義七部分</th><th>位置</th><th>Lean3 放什麼</th><th>誰講</th></tr></thead>
 <tbody>
-<tr class="qian"><th>Demand part</th><td>1 WHAT、2 Importance weighting</td><td>左</td><td>D1–D7，重要性 1–5 分</td><td class="nw"><span class="tag">羽芊</span></td></tr>
-<tr class="qian"><th>Technology part</th><td>3 HOW</td><td>上</td><td>T1–T7、衡量方式、改善方向</td><td class="nw"><span class="tag">羽芊</span></td></tr>
-<tr class="yu"><th>Industrial benchmarking</th><td>2 Customer Competitive Evaluation、7 Competitive Assessment</td><td>右、下</td><td>右邊比顧客評分，下面比技術</td><td class="nw"><span class="tag">小魚</span></td></tr>
-<tr class="yu"><th>Roof of the House</th><td>5 Correlation Matrix</td><td>頂</td><td>T1–T7 之間的關係</td><td class="nw"><span class="tag">小魚</span></td></tr>
-<tr class="mel"><th>Demand-technology matrix</th><td>4 Relationship Matrix</td><td>中</td><td>7×7 矩陣，9、3、1</td><td class="nw"><span class="tag">宛云</span></td></tr>
-<tr class="mel"><th>Absolute、Relative scores</th><td>最底部 Technical importance</td><td>底</td><td>矩陣算出的分數，不算第六部分</td><td class="nw"><span class="tag">宛云</span></td></tr>
-<tr class="mel"><th>Main design specifications</th><td>6 HOW MUCH Targets</td><td>矩陣下方</td><td>各技術的設計目標值</td><td class="nw"><span class="tag">宛云</span></td></tr>
+<tr class="qian"><th>1 WHAT Customer Requirements</th><td>左</td><td>D1–D7 顧客需求</td><td class="nw"><span class="tag">羽芊</span></td></tr>
+<tr class="qian"><th>2 Importance weighting</th><td>左下欄</td><td>每項需求的權重 1–5</td><td class="nw"><span class="tag">羽芊</span></td></tr>
+<tr class="yu"><th>2 Customer Competitive Evaluation</th><td>右</td><td>Lean3 和競品的顧客評分</td><td class="nw"><span class="tag">小魚</span></td></tr>
+<tr class="qian"><th>3 HOW Technical Requirements</th><td>上</td><td>T1–T7、衡量方式、MAX／MIN</td><td class="nw"><span class="tag">羽芊</span></td></tr>
+<tr class="mel"><th>4 Relationship Matrix</th><td>中</td><td>需求×技術矩陣，9、3、1</td><td class="nw"><span class="tag">宛云</span></td></tr>
+<tr class="yu"><th>5 Roof Correlation Matrix</th><td>頂</td><td>技術之間的正負相關</td><td class="nw"><span class="tag">小魚</span></td></tr>
+<tr class="mel"><th>6 HOW MUCH Targets</th><td>矩陣下方</td><td>設計目標值 → Main design specifications</td><td class="nw"><span class="tag">宛云</span></td></tr>
+<tr class="yu"><th>7 Competitive Assessment</th><td>下</td><td>Lean3 和競品的技術比較</td><td class="nw"><span class="tag">小魚</span></td></tr>
+<tr class="mel"><th>7 Importance</th><td>最底部</td><td>Absolute、Relative scores</td><td class="nw"><span class="tag">宛云</span></td></tr>
 </tbody></table></div>
-<p class="sub">照講義調整的地方</p>
+<p class="cap">第 2、7 部分各有兩塊內容，由兩個人分別講。</p>
+<p class="sub">七部分怎麼環環相扣</p>
+<ol class="link">
+<li><span><em>1 WHAT＋2 權重</em>：先決定顧客要什麼、哪些最重要</span></li>
+<li><span><em>3 HOW</em>：把每項需求翻成可測量的技術</span></li>
+<li><span><em>4 關係矩陣 → 7 Importance</em>：權重 × 關聯分數，算出 Absolute、Relative，排出技術優先順序</span></li>
+<li><span><em>5 屋頂</em>：檢查優先技術之間有沒有衝突，負相關的地方要做取捨</span></li>
+<li><span><em>2 顧客評分＋7 技術比較</em>：和競品比，找出 Lean3 要守住的優勢和要追上的弱點</span></li>
+<li><span><em>6 Targets</em>：綜合排名、取捨和競品差距，訂出 Main design specifications</span></li>
+</ol>
+<p class="sub">我們的做法</p>
 <div class="tw"><table>
-<thead><tr><th>項目</th><th>我們的做法</th></tr></thead>
+<thead><tr><th>項目</th><th>做法</th></tr></thead>
 <tbody>
-<tr><th>競品比較</th><td>拆成兩塊：右邊的 Customer rating，加上矩陣下方的技術比較</td></tr>
-<tr><th>設計規格</th><td>放在區塊 6 Targets，用矩陣排名決定先談哪些</td></tr>
-<tr><th>改善方向</th><td>Technology part 補上 MAX、MIN，對應講義 HOW 上方那列</td></tr>
-<tr><th>分數</th><td>和講義一致：矩陣 9、3、1，沒有關聯就留空；重要性 1–5</td></tr>
-<tr><th>Roof 圖例</th><td>講義標 9、5、3、1，圖上沒有負相關符號。我們要講取捨，所以先用 ＋ 和 −，待確認</td></tr>
-<tr><th>先不放</th><td>Complaints、Organizational difficulty、Important controls。老師 8 點沒有要求，我們也沒有資料</td></tr>
+<tr><th>需求、技術、權重</th><td>由小組研究選定，每個權重都準備一句理由</td></tr>
+<tr><th>分數</th><td>矩陣用 9、3、1，沒有關聯就留空；權重 1–5</td></tr>
+<tr><th>Roof</th><td>老師確認可標負相關：＋ 協同、− 衝突，報告重點放在負相關的取捨</td></tr>
+<tr><th>改善方向</th><td>3 HOW 補上 MAX、MIN，對應講義 HOW 上方那列</td></tr>
+<tr><th>先不放</th><td>Complaints、Organizational difficulty、Important controls，老師 8 點沒有要求</td></tr>
 </tbody></table></div>
 <p class="sub" id="parts">每個人的 part</p>
 <div class="tw"><table>
 <thead><tr><th>組員</th><th>比重</th><th>時間</th><th>老師的要求</th><th>投影片</th><th>這部分要讓台下記住</th></tr></thead>
 <tbody>
-<tr class="qian"><th><span class="tag">羽芊</span></th><td class="pp">約 30%</td><td class="pp nw">6 分鐘</td><td><a href="#s1">1 五大部分</a><br><a href="#s2">2 需求、3 技術</a></td><td class="pp nw">P1–P4</td><td>QFD 把顧客的話翻譯成工程目標</td></tr>
+<tr class="qian"><th><span class="tag">羽芊</span></th><td class="pp">約 30%</td><td class="pp nw">6 分鐘</td><td><a href="#s1">1 七大部分</a><br><a href="#s2">2 需求、3 技術</a></td><td class="pp nw">P1–P4</td><td>QFD 把顧客的話翻譯成工程目標</td></tr>
 <tr class="yu"><th><span class="tag">小魚</span></th><td class="pp">約 30%</td><td class="pp nw">6 分鐘</td><td><a href="#s3">4 競品、5 屋頂</a></td><td class="pp nw">P5–P7</td><td>Lean3 贏在窄和主動傾斜，但改善都有代價</td></tr>
 <tr class="mel"><th><span class="tag">宛云<br>主講</span></th><td class="pp">約 40%</td><td class="pp nw">7 分鐘</td><td><a href="#s4">6、7 計分</a><br><a href="#s5">8 設計規格</a></td><td class="pp nw">P8–P11</td><td>研發該先做什麼，以及為什麼</td></tr>
 </tbody></table></div>
@@ -211,12 +241,12 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 </section>
 
 <section class="stage first qian" id="s1">
-<div class="shead"><h2>第 1 段｜開場與 Five parts（要求 1）</h2><span class="by">羽芊｜P1–P2｜0:00–3:00</span></div>
+<div class="shead"><h2>第 1 段｜開場與 Seven parts（要求 1）</h2><span class="by">羽芊｜P1–P2｜0:00–3:00</span></div>
 <div class="sbody">
 <div class="keep"><small>這段結束時，台下要知道</small><p>QFD 就是把「顧客想要什麼」翻譯成「工程師該先做什麼」</p></div>
 <ol class="slides">
 <li><span class="pno">P1</span><div><h3><span class="min">1 分鐘</span>Lean3 是什麼、為什麼用 QFD</h3><p>產品介紹加核心問題，上面的五個規格可以直接用</p></div></li>
-<li><span class="pno">P2</span><div><h3><span class="min">2 分鐘</span>Five parts of House of Quality</h3><p>放元杰講義版的品質屋圖，五部分各用一句話說明，也順便預告接下來的順序</p></div></li>
+<li><span class="pno">P2</span><div><h3><span class="min">2 分鐘</span>Seven parts of House of Quality</h3><p>放元杰講義版的品質屋圖，七部分各用一句話說明，再講它們怎麼串起來</p></div></li>
 </ol>
 <div class="refs"><p>本段參考資料</p><ul>
 <li><a href="https://hbr.org/1988/05/the-house-of-quality">Hauser &amp; Clausing（1988），The House of Quality，Harvard Business Review</a></li>
@@ -254,7 +284,7 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <div class="keep"><small>這段結束時，台下要知道</small><p>Lean3 贏在窄和主動傾斜，但每項改善都有代價</p></div>
 <ol class="slides">
 <li><span class="pno">P5</span><div><h3><span class="min">2 分鐘</span>Industrial benchmarking（區塊 2、7）</h3><p>先看右邊的顧客評分，再看下方的技術比較</p></div></li>
-<li><span class="pno">P6</span><div><h3><span class="min">1 分 30 秒</span>Industrial benchmarking：三個結論</h3><p>最窄、唯一有主動傾斜且時速較高，但續航低於 C+pod</p></div></li>
+<li><span class="pno">P6</span><div><h3><span class="min">1 分 30 秒</span>Industrial benchmarking：結論和建議</h3><p>最窄、唯一有主動傾斜且時速較高，但續航低於 C+pod。最後提出研發建議，例如提升續航效率</p></div></li>
 <li><span class="pno">P7</span><div><h3><span class="min">2 分 30 秒</span>Roof of the House（區塊 5）</h3><p>用三角矩陣圖，挑兩組例子講，例如電池變大會讓充電變久</p></div></li>
 </ol>
 <p class="label">P5 區塊 2：Customer Competitive Evaluation（小組評估草稿，1 最差、5 最好）</p>
@@ -271,7 +301,7 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <p class="label">P7 的屋頂圖：兩項技術的交會格就是它們的關係</p>
 <div class="roof"><svg viewBox="0 0 480 254" role="img" aria-label="品質屋屋頂：T1 與 T2 正相關；T1 與 T7、T3 與 T4、T3 與 T7、T4 與 T5、T4 與 T6、T6 與 T7 負相關"><path d="M90 166L119 195L90 224L61 195Z" fill="var(--accent)" fill-opacity=".22" stroke="var(--line)"/><text x="90" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">+</text><path d="M120 136L149 165L120 194L91 165Z" fill="none" stroke="var(--line)"/><path d="M150 106L179 135L150 164L121 135Z" fill="none" stroke="var(--line)"/><path d="M180 76L209 105L180 134L151 105Z" fill="none" stroke="var(--line)"/><path d="M210 46L239 75L210 104L181 75Z" fill="none" stroke="var(--line)"/><path d="M240 16L269 45L240 74L211 45Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="240" y="51" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M150 166L179 195L150 224L121 195Z" fill="none" stroke="var(--line)"/><path d="M180 136L209 165L180 194L151 165Z" fill="none" stroke="var(--line)"/><path d="M210 106L239 135L210 164L181 135Z" fill="none" stroke="var(--line)"/><path d="M240 76L269 105L240 134L211 105Z" fill="none" stroke="var(--line)"/><path d="M270 46L299 75L270 104L241 75Z" fill="none" stroke="var(--line)"/><path d="M210 166L239 195L210 224L181 195Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="210" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M240 136L269 165L240 194L211 165Z" fill="none" stroke="var(--line)"/><path d="M270 106L299 135L270 164L241 135Z" fill="none" stroke="var(--line)"/><path d="M300 76L329 105L300 134L271 105Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="300" y="111" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M270 166L299 195L270 224L241 195Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="270" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M300 136L329 165L300 194L271 165Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="300" y="171" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><path d="M330 106L359 135L330 164L301 135Z" fill="none" stroke="var(--line)"/><path d="M330 166L359 195L330 224L301 195Z" fill="none" stroke="var(--line)"/><path d="M360 136L389 165L360 194L331 165Z" fill="none" stroke="var(--line)"/><path d="M390 166L419 195L390 224L361 195Z" fill="var(--hot)" fill-opacity=".22" stroke="var(--line)"/><text x="390" y="201" font-size="18" font-weight="700" text-anchor="middle" fill="var(--ink)">−</text><text x="60" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T1 傾斜</text><text x="120" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T2 車身</text><text x="180" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T3 安全</text><text x="240" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T4 電池</text><text x="300" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T5 充電</text><text x="360" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T6 空調</text><text x="420" y="243" font-size="13" text-anchor="middle" fill="var(--muted)">T7 成本</text></svg></div>
 <p class="key"><span><b>＋</b> 正相關，互相幫忙</span><span><b>−</b> 負相關，要做取捨</span><span>空白：無明顯關係</span></p>
-<p class="cap">講義圖例是 9、5、3、1，這裡先用 ＋ 和 − 表達方向，待確認是否要改成講義的標法。</p>
+<p class="cap">老師確認可以標負相關。正相關代表協同，改善一項會帶動另一項；負相關代表衝突，是設計要取捨的地方。</p>
 <div class="refs"><p>本段參考資料</p><ul>
 <li><a href="https://www.citroen.co.uk/ami">Citroën UK 官網：Ami 規格與充電時間</a></li>
 <li><a href="https://www.autoexpress.co.uk/citroen/ami/prices-specs/108692/6kw-ami-5.4kwh-2dr-auto">Auto Express：Ami 電池總容量 5.5 kWh、可用 5.4 kWh</a></li>
@@ -338,7 +368,8 @@ body{font-size:15px}.hero .wrap{padding-block:38px 18px}.facts{grid-template-col
 <h2>做投影片之前先確認</h2>
 <ul class="check">
 <li><span><strong>全組確認矩陣分數。</strong>第一名很敏感：D1×T3 或 D7×T3 任一格從 9 改成 3，T3 就會掉到 87 或 93，第一名變成 T1。特別是 D7 雙人實用和車體安全，要講得出為什麼是強相關</span></li>
-<li><span><strong>問元杰 Roof 怎麼標。</strong>講義圖例是 9、5、3、1，沒有負相關。Lean3 的取捨要不要用 ＋、− 表達，先確認再定稿</span></li>
+<li><span><strong>宛云驗算 Absolute。</strong>老師會看數字有沒有算對，定稿後請另一位組員再算一次</span></li>
+<li><span><strong>每個權重準備理由。</strong>老師會問權重代表什麼，羽芊準備每項需求為什麼給這個分數</span></li>
 <li><span><strong>補完 Customer rating。</strong>D1、D2、D4、D7 還是待評，全組討論後由小魚填入</span></li>
 <li><span><strong>標清楚資料性質。</strong>重要性、Customer rating 和矩陣分數要寫「研究小組評估」，不是顧客調查或 Lean Mobility 官方資料</span></li>
 <li><span><strong>定稿前再看一次規格。</strong>數字已用媒體報導核對，但量產版可能調整</span></li>
